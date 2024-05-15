@@ -88,8 +88,8 @@ COLOR_THEMES = {                    -- available color themes for the plugin
     "otingocnI"         -- 15
 }
 PLACE_NOTES_BETWEEN_MENUS = {       -- sub-menus within the "Place Notes (Between Notes)" menu
-    -- "Place Notes By Snap",
-    "Place Notes By Number"
+    "Place Notes By Number",
+    "Place Notes By Snap Gradient"
 }
 EDIT_GENERAL_MENUS = {              -- sub-menus within the "Edit Notes (General)" menu
     "Shift Notes Up/Down",
@@ -267,8 +267,8 @@ function placeNotesBetweenMenu()
     chooseSubMenu(menuVars, PLACE_NOTES_BETWEEN_MENUS)
     saveVariables("placeNotesBetweenMenuVars", menuVars)
     local currentMenu = PLACE_NOTES_BETWEEN_MENUS[menuVars.subMenuIndex]
-    -- if currentMenu == "Shift Notes Up/Down"    then placeNotesBetweenSnapMenu() end
     if currentMenu == "Place Notes By Number" then placeNotesBetweenNumberMenu() end
+    if currentMenu == "Place Notes By Snap Gradient" then placeNotesBetweenSnapGradientMenu() end
 end
 -- Creates the "Place Notes By Number" menu
 function placeNotesBetweenNumberMenu()
@@ -282,6 +282,19 @@ function placeNotesBetweenNumberMenu()
     local buttonText = "Place " .. settingVars.noteCount .. " notes between selected notes"
     local minimumNotes = 2
     simpleActionMenu(buttonText, minimumNotes, placeNotesBetweenNumber, nil, settingVars)
+end
+
+function placeNotesBetweenSnapGradientMenu()
+    local settingVars = {
+        snaps = {4, 8}
+    }
+    getVariables("placeNotesBetweenSnapGradientVars", settingVars)
+    chooseSnapCount(settingVars)
+    saveVariables("placeNotesBetweenSnapGradientVars", settingVars)
+    addSeparator()
+    local buttonText = "Place notes between 1/" .. settingVars.snaps[1] .. " and 1/" .. settingVars.snaps[2] .. " snaps"
+    local minimumNotes = 2
+    simpleActionMenu(buttonText, minimumNotes, placeNotesBetweenSnapGradient, nil, settingVars)
 end
 
 ------------------------------------------------------------------------- Place Notes (Around Note)
@@ -524,6 +537,23 @@ function placeNotesBetweenNumber(settingVars)
         local noteStartTime = newNoteTimes[i]
         local noteLane = shiftWrapLaneNum(firstNote.Lane, i, totalNumLanes)
         addNoteToList(notesToAdd, firstNote, noteStartTime, noteLane, nil, nil, nil)
+    end
+    addNotes(notesToAdd)
+end
+function placeNotesBetweenSnapGradient(settingVars)
+    local startTime = state.SelectedHitObjects[1].StartTime
+    local endTime = state.SelectedHitObjects[#state.SelectedHitObjects].StartTime
+    local bpm = map.GetTimingPointAt(startTime).Bpm
+    local timeDist1 = (60000 / bpm) / settingVars.snaps[1]
+    local timeDist2 = (60000 / bpm) / settingVars.snaps[2]
+    local notesToAdd = {}
+    local i = 1
+    local currentTime = startTime + timeDist1
+    while (currentTime < endTime) do
+        addNoteToList(notesToAdd, state.SelectedHitObjects[1], currentTime, (i + state.SelectedHitObjects[1].Lane - 1) % 4 + 1, nil, nil, nil)
+        local f = (currentTime - startTime) / (endTime - startTime)
+        currentTime = currentTime + f * timeDist2 + (1-f) * timeDist1
+        i = i + 1
     end
     addNotes(notesToAdd)
 end
@@ -1582,6 +1612,12 @@ end
 function chooseNoteCount(settingVars) 
     _, settingVars.noteCount = imgui.InputInt("Note Count", settingVars.noteCount, 1, 1)
     settingVars.noteCount = clampToInterval(settingVars.noteCount, 1, FUNNY_NUMBER)
+end
+-- Lets you choose two snaps to interpolate from
+-- Parameters
+--    settingVars : list of variables used for the current menu [Table]
+function chooseSnapCount(settingVars) 
+    _, settingVars.snaps = imgui.InputInt2("Start/End Snaps", settingVars.snaps)
 end
 -- Lets you choose the note info tooltip visibility
 -- Parameters
