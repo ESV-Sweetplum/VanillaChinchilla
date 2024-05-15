@@ -46,17 +46,17 @@ FUNNY_NUMBER = 727 -- arbitrary funny prime number, used as an arbitrary large v
 
 ----------------------------------------------------------------------------------------------- GUI
 
-DEFAULT_WIDGET_HEIGHT = 26       -- value determining the default height of GUI widgets
-DEFAULT_WIDGET_WIDTH = 160       -- value determining the default width of GUI widgets
-MAX_WIDGET_WIDTH = 255           -- value determining the max width of GUI widgets
-PADDING_WIDTH = 8                -- value determining window and frame padding
-RADIO_BUTTON_SPACING = 7.5       -- value determining spacing between radio buttons
-SAMELINE_SPACING = 5             -- value determining spacing between GUI items on the same row
-ACTION_BUTTON_SIZE = { 255, 42 } -- dimensions of the button that does important things
-PLOT_GRAPH_SIZE = { 255, 100 }   -- dimensions of plot graphs
-HALF_BUTTON_SIZE = { 125, 30 }   -- dimensions of a button that does kinda important things
+DEFAULT_WIDGET_HEIGHT = 26         -- value determining the default height of GUI widgets
+DEFAULT_WIDGET_WIDTH = 160         -- value determining the default width of GUI widgets
+MAX_WIDGET_WIDTH = 255             -- value determining the max width of GUI widgets
+PADDING_WIDTH = 8                  -- value determining window and frame padding
+RADIO_BUTTON_SPACING = 7.5         -- value determining spacing between radio buttons
+SAMELINE_SPACING = 5               -- value determining spacing between GUI items on the same row
+ACTION_BUTTON_SIZE = { 255, 42 }   -- dimensions of the button that does important things
+PLOT_GRAPH_SIZE = { 255, 100 }     -- dimensions of plot graphs
+HALF_BUTTON_SIZE = { 125, 30 }     -- dimensions of a button that does kinda important things
 SECONDARY_BUTTON_SIZE = { 60, 24 } -- dimensions of a button that does less important things
-LANE_BUTTON_SIZE = { 30, 30 }    -- dimensions of the button representing a note lane
+LANE_BUTTON_SIZE = { 30, 30 }      -- dimensions of the button representing a note lane
 
 ------------------------------------------------------------------------------- Number restrictions
 
@@ -281,7 +281,7 @@ end
 -- Creates the "Place Notes By Number" menu
 function placeNotesBetweenNumberMenu()
     local settingVars = {
-        noteCount = 3
+        noteCount = 3,
     }
     getVariables("placeNotesBetweenNumberVars", settingVars)
     chooseNoteCount(settingVars)
@@ -294,10 +294,12 @@ end
 
 function placeNotesBetweenSnapGradientMenu()
     local settingVars = {
-        snaps = { 4, 8 }
+        snaps = { 4, 8 },
+        lanes = "1 2 3 4"
     }
     getVariables("placeNotesBetweenSnapGradientVars", settingVars)
     chooseSnapCount(settingVars)
+    chooseLaneTable(settingVars)
     saveVariables("placeNotesBetweenSnapGradientVars", settingVars)
     addSeparator()
     local buttonText = "Place notes between 1/" .. settingVars.snaps[1] .. " and 1/" .. settingVars.snaps[2] .. " snaps"
@@ -548,6 +550,16 @@ end
 -- Note Manipulation & Wizardry -------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 
+function table.split(str, predicate)
+    t = {}
+
+    for i in string.gmatch(str, predicate) do
+        t[#t + 1] = i
+    end
+
+    return t
+end
+
 -- Places notes between numbers
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -577,9 +589,11 @@ function placeNotesBetweenSnapGradient(settingVars)
     local notesToAdd = {}
     local i = 1
     local currentTime = startTime + timeDist1
+    local laneTable = table.split(settingVars.lanes, "%S+")
     while (currentTime < endTime) do
+        local lane = laneTable[(i - 1) % #laneTable + 1]
         addNoteToList(notesToAdd, state.SelectedHitObjects[1], currentTime,
-            (i + state.SelectedHitObjects[1].Lane - 1) % 4 + 1, nil, nil, nil)
+            tonumber(lane), nil, nil, nil)
         local f = (currentTime - startTime) / (endTime - startTime)
         currentTime = currentTime + f * timeDist2 + (1 - f) * timeDist1
         i = i + 1
@@ -1724,6 +1738,10 @@ end
 --    settingVars : list of variables used for the current menu [Table]
 function chooseSnapCount(settingVars)
     _, settingVars.snaps = imgui.InputInt2("Start/End Snaps", settingVars.snaps)
+end
+
+function chooseLaneTable(settingVars)
+    _, settingVars.lanes = imgui.InputText("Lane Table", settingVars.lanes, 4096)
 end
 
 -- Lets you choose the note info tooltip visibility
