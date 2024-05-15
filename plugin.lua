@@ -5,12 +5,13 @@
 -- it under the terms of the GNU General Public License as published by
 -- the Free Software Foundation, either version 3 of the License, or
 -- (at your option) any later version.
--- 
+--
 -- This program is distributed in the hope that it will be useful,
 -- but WITHOUT ANY WARRANTY; without even the implied warranty of
 -- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 -- GNU General Public License for more details.
--- 
+--
+
 -- You should have received a copy of the GNU General Public License
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
@@ -31,7 +32,7 @@
 -- rhythm game. The plugin provides various tools to place and edit notes quickly and efficiently
 -- when making maps in the editor.
 
--- If you have any feature suggestions or issues with the plugin, please open an issue at 
+-- If you have any feature suggestions or issues with the plugin, please open an issue at
 -- https://github.com/kloi34/VanillaChinchilla/issues
 
 -- Special thanks to ESV Sweetplum for contributing to the plugin
@@ -45,53 +46,53 @@ FUNNY_NUMBER = 727 -- arbitrary funny prime number, used as an arbitrary large v
 
 ----------------------------------------------------------------------------------------------- GUI
 
-DEFAULT_WIDGET_HEIGHT = 26          -- value determining the default height of GUI widgets
-DEFAULT_WIDGET_WIDTH = 160          -- value determining the default width of GUI widgets
-MAX_WIDGET_WIDTH = 255              -- value determining the max width of GUI widgets
-PADDING_WIDTH = 8                   -- value determining window and frame padding
-RADIO_BUTTON_SPACING = 7.5          -- value determining spacing between radio buttons
-SAMELINE_SPACING = 5                -- value determining spacing between GUI items on the same row
-ACTION_BUTTON_SIZE = {255, 42}      -- dimensions of the button that does important things
-PLOT_GRAPH_SIZE = {255, 100}        -- dimensions of plot graphs
-HALF_BUTTON_SIZE = {125, 30}        -- dimensions of a button that does kinda important things
-SECONDARY_BUTTON_SIZE = {60, 24}    -- dimensions of a button that does less important things
-LANE_BUTTON_SIZE = {30, 30}         -- dimensions of the button representing a note lane
+DEFAULT_WIDGET_HEIGHT = 26       -- value determining the default height of GUI widgets
+DEFAULT_WIDGET_WIDTH = 160       -- value determining the default width of GUI widgets
+MAX_WIDGET_WIDTH = 255           -- value determining the max width of GUI widgets
+PADDING_WIDTH = 8                -- value determining window and frame padding
+RADIO_BUTTON_SPACING = 7.5       -- value determining spacing between radio buttons
+SAMELINE_SPACING = 5             -- value determining spacing between GUI items on the same row
+ACTION_BUTTON_SIZE = { 255, 42 } -- dimensions of the button that does important things
+PLOT_GRAPH_SIZE = { 255, 100 }   -- dimensions of plot graphs
+HALF_BUTTON_SIZE = { 125, 30 }   -- dimensions of a button that does kinda important things
+SECONDARY_BUTTON_SIZE = { 60, 24 } -- dimensions of a button that does less important things
+LANE_BUTTON_SIZE = { 30, 30 }    -- dimensions of the button representing a note lane
 
 ------------------------------------------------------------------------------- Number restrictions
 
-MIN_RGB_CYCLE_TIME = 6              -- minimum seconds for one complete RGB color cycle
-MAX_RGB_CYCLE_TIME = 300            -- maximum seconds for one complete RGB color cycle
-MIN_LN_LENGTH = 36                  -- default minimum millisecond duration of LNs
-MIN_LN_GAP_LENGTH = 36              -- default minimum millisecond duration of LN gaps
+MIN_RGB_CYCLE_TIME = 6   -- minimum seconds for one complete RGB color cycle
+MAX_RGB_CYCLE_TIME = 300 -- maximum seconds for one complete RGB color cycle
+MIN_LN_LENGTH = 36       -- default minimum millisecond duration of LNs
+MIN_LN_GAP_LENGTH = 36   -- default minimum millisecond duration of LN gaps
 
 -------------------------------------------------------------------------------------- Menu related
 
-BEHAVIORS = {                       -- behaviors of notes/time
+BEHAVIORS = { -- behaviors of notes/time
     "Slow down",
     "Speed up"
 }
-COLOR_THEMES = {                    -- available color themes for the plugin
-    "Classic",          -- 1
-    "Strawberry",       -- 2
-    "Amethyst",         -- 3
-    "Tree",             -- 4
-    "Barbie",           -- 5
-    "Incognito",        -- 6
-    "Incognito + RGB",  -- 7
-    "Tobi's Glass",     -- 8
-    "Tobi's RGB Glass", -- 9
-    "Glass",            -- 10
-    "Glass + RGB",      -- 11
-    "RGB Gamer Mode",   -- 12
-    "edom remag BGR",   -- 13
-    "BGR + otingocnI",  -- 14
-    "otingocnI"         -- 15
+COLOR_THEMES = {              -- available color themes for the plugin
+    "Classic",                -- 1
+    "Strawberry",             -- 2
+    "Amethyst",               -- 3
+    "Tree",                   -- 4
+    "Barbie",                 -- 5
+    "Incognito",              -- 6
+    "Incognito + RGB",        -- 7
+    "Tobi's Glass",           -- 8
+    "Tobi's RGB Glass",       -- 9
+    "Glass",                  -- 10
+    "Glass + RGB",            -- 11
+    "RGB Gamer Mode",         -- 12
+    "edom remag BGR",         -- 13
+    "BGR + otingocnI",        -- 14
+    "otingocnI"               -- 15
 }
-PLACE_NOTES_BETWEEN_MENUS = {       -- sub-menus within the "Place Notes (Between Notes)" menu
+PLACE_NOTES_BETWEEN_MENUS = { -- sub-menus within the "Place Notes (Between Notes)" menu
     "Place Notes By Number",
     "Place Notes By Snap Gradient"
 }
-EDIT_GENERAL_MENUS = {              -- sub-menus within the "Edit Notes (General)" menu
+EDIT_GENERAL_MENUS = { -- sub-menus within the "Edit Notes (General)" menu
     "Shift Notes Up/Down",
     "Shift Notes Left/Right",
     "Switch Note Lanes",
@@ -99,13 +100,13 @@ EDIT_GENERAL_MENUS = {              -- sub-menus within the "Edit Notes (General
     "Scale Note Spacing",
     "Shear Lane Positions"
 }
-EDIT_LNS_MENUS = {                  -- sub-menus within the "Edit Notes (LNs)" menu
+EDIT_LNS_MENUS = { -- sub-menus within the "Edit Notes (LNs)" menu
     "Apply Full LN",
     "Apply Inverse LN",
     "Adjust LN Lengths",
     "Change LNs to Rice"
 }
-INFO_MENUS = {                      -- sub-menus within the "Plugin Info" menu
+INFO_MENUS = { -- sub-menus within the "Plugin Info" menu
     "How To Use VanillaChinchilla",
     "Keyboard Shortcuts",
     "Links",
@@ -113,7 +114,7 @@ INFO_MENUS = {                      -- sub-menus within the "Plugin Info" menu
     "Plugin Behavior Settings",
     "Extra Goodies"
 }
-MENUS = {                           -- high-level menus for the plugin
+MENUS = { -- high-level menus for the plugin
     "Plugin Info & Settings",
     "Place Notes (Between Notes)",
     --"Place Notes (Around Note)",
@@ -121,7 +122,7 @@ MENUS = {                           -- high-level menus for the plugin
     "Edit Notes (General)",
     "Edit Notes (LNs)"
 }
-SCALE_TYPES = {                     -- ways to scale note spacing
+SCALE_TYPES = { -- ways to scale note spacing
     "Exponential",
     "Polynomial",
     "Circular",
@@ -130,7 +131,7 @@ SCALE_TYPES = {                     -- ways to scale note spacing
     "Inverse Power",
     "Peter Stock"
 }
-STYLE_THEMES = {                    -- available style/appearance themes for the plugin
+STYLE_THEMES = { -- available style/appearance themes for the plugin
     "Rounded",
     "Boxed",
     "Rounded + Border",
@@ -151,31 +152,31 @@ function draw()
         hideNoteInfoTooltip = false
     }
     getVariables("globalVars", globalVars)
-    
+
     state.SetValue("uiTooltipActive", false)
-    
+
     autoOpenNextWindow(PLUGIN_NAME)
     setPluginAppearanceStyles(globalVars)
     setPluginAppearanceColors(globalVars)
     focusWindowOnHotkeyPress()
     centerWindowOnHotkeyPress()
     drawChinchillaStartupAnimation()
-    
+
     imgui.Begin(PLUGIN_NAME, imgui_window_flags.AlwaysAutoResize)
     imgui.PushItemWidth(DEFAULT_WIDGET_WIDTH)
     chooseMenu(globalVars)
     local currentMenu = MENUS[globalVars.menuIndex]
-    if currentMenu == "Plugin Info & Settings"      then pluginInfoMenu(globalVars) end
+    if currentMenu == "Plugin Info & Settings" then pluginInfoMenu(globalVars) end
     if currentMenu == "Place Notes (Between Notes)" then placeNotesBetweenMenu() end
     --if currentMenu == "Place Notes (Around Note)"   then end
     --if currentMenu == "Place Notes (From Scratch)"  then end
-    if currentMenu == "Edit Notes (General)"        then editNotesGeneralMenu() end
-    if currentMenu == "Edit Notes (LNs)"            then editNotesLNsMenu() end
+    if currentMenu == "Edit Notes (General)" then editNotesGeneralMenu() end
+    if currentMenu == "Edit Notes (LNs)" then editNotesLNsMenu() end
     state.IsWindowHovered = imgui.IsWindowHovered()
     imgui.End()
-    
+
     displayNoteInfoTooltip(globalVars)
-    
+
     saveVariables("globalVars", globalVars)
 end
 
@@ -193,12 +194,13 @@ function pluginInfoMenu(globalVars)
     saveVariables("infoMenuVars", menuVars)
     local currentMenu = INFO_MENUS[menuVars.subMenuIndex]
     if currentMenu == "How To Use VanillaChinchilla" then howToUseVanillaChinchillaMenu() end
-    if currentMenu == "Keyboard Shortcuts"           then keyboardShortcutsMenu() end
-    if currentMenu == "Links"                        then linksMenu() end
-    if currentMenu == "Plugin Appearance Settings"   then pluginAppearanceMenu(globalVars) end
-    if currentMenu == "Plugin Behavior Settings"     then pluginBehaviorMenu(globalVars) end
-    if currentMenu == "Extra Goodies"                then extraGoodiesMenu(globalVars) end
+    if currentMenu == "Keyboard Shortcuts" then keyboardShortcutsMenu() end
+    if currentMenu == "Links" then linksMenu() end
+    if currentMenu == "Plugin Appearance Settings" then pluginAppearanceMenu(globalVars) end
+    if currentMenu == "Plugin Behavior Settings" then pluginBehaviorMenu(globalVars) end
+    if currentMenu == "Extra Goodies" then extraGoodiesMenu(globalVars) end
 end
+
 -- Creates the "How To Use VanillaChinchilla" menu
 function howToUseVanillaChinchillaMenu()
     imgui.Text("1.  Choose a tool from the dropdown menus")
@@ -206,6 +208,7 @@ function howToUseVanillaChinchillaMenu()
     imgui.Text("3.  Select notes to use the tool at/between")
     imgui.Text("4.  Press ' T ' on your keyboard to use the tool")
 end
+
 -- Creates the "Keyboard Shortcuts" menu
 function keyboardShortcutsMenu()
     local indentAmount = -6
@@ -229,12 +232,14 @@ function keyboardShortcutsMenu()
     tooltip("Useful when the plugin becomes offscreen")
     imgui.Unindent(indentAmount)
 end
+
 -- Creates the "Links" menu
 function linksMenu()
     linkBox("GitHub Repository", "https://github.com/kloi34/VanillaChinchilla")
     local photoLink = "https://www.facebook.com/cameronschinchillas/photos/1876978765672324"
     linkBox("Cute Photo from Cameron's Chinchillas UK", photoLink) -- chinchilla bombs
 end
+
 -- Creates the "Plugin Appearance Settings" menu
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
@@ -242,12 +247,14 @@ function pluginAppearanceMenu(globalVars)
     chooseStyleTheme(globalVars, keys.Z)
     chooseColorTheme(globalVars, keys.X)
 end
+
 -- Creates the "Plugin Behavior Settings" menu
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
 function pluginBehaviorMenu(globalVars)
     chooseNoteInfoTooltipVisibility(globalVars, keys.Z)
 end
+
 -- Creates the "Extra Goodies" menu
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
@@ -270,6 +277,7 @@ function placeNotesBetweenMenu()
     if currentMenu == "Place Notes By Number" then placeNotesBetweenNumberMenu() end
     if currentMenu == "Place Notes By Snap Gradient" then placeNotesBetweenSnapGradientMenu() end
 end
+
 -- Creates the "Place Notes By Number" menu
 function placeNotesBetweenNumberMenu()
     local settingVars = {
@@ -286,7 +294,7 @@ end
 
 function placeNotesBetweenSnapGradientMenu()
     local settingVars = {
-        snaps = {4, 8}
+        snaps = { 4, 8 }
     }
     getVariables("placeNotesBetweenSnapGradientVars", settingVars)
     chooseSnapCount(settingVars)
@@ -316,13 +324,14 @@ function editNotesGeneralMenu()
     chooseSubMenu(menuVars, EDIT_GENERAL_MENUS)
     saveVariables("editGeneralMenuVars", menuVars)
     local currentMenu = EDIT_GENERAL_MENUS[menuVars.subMenuIndex]
-    if currentMenu == "Shift Notes Up/Down"    then shiftNotesVerticallyMenu() end
+    if currentMenu == "Shift Notes Up/Down" then shiftNotesVerticallyMenu() end
     if currentMenu == "Shift Notes Left/Right" then shiftNotesHorizontallyMenu() end
-    if currentMenu == "Switch Note Lanes"      then switchNoteLanesMenu() end
-    if currentMenu == "Flip Notes Vertically"  then flipNotesVerticallyMenu() end
-    if currentMenu == "Scale Note Spacing"     then scaleNoteSpacingMenu() end
-    if currentMenu == "Shear Lane Positions"   then shearLanePositionsMenu() end
+    if currentMenu == "Switch Note Lanes" then switchNoteLanesMenu() end
+    if currentMenu == "Flip Notes Vertically" then flipNotesVerticallyMenu() end
+    if currentMenu == "Scale Note Spacing" then scaleNoteSpacingMenu() end
+    if currentMenu == "Shear Lane Positions" then shearLanePositionsMenu() end
 end
+
 -- Creates the "Shift Notes Up/Down" menu
 function shiftNotesVerticallyMenu()
     local settingVars = {
@@ -332,12 +341,16 @@ function shiftNotesVerticallyMenu()
     chooseMilliseconds(settingVars)
     saveVariables("shiftVertSettingVars", settingVars)
     addSeparator()
-    if settingVars.milliseconds == 0 then imgui.Text(":jerry:") return end
-    
+    if settingVars.milliseconds == 0 then
+        imgui.Text(":jerry:")
+        return
+    end
+
     local buttonText = getShiftVerticalButtonText(settingVars)
     local minimumNotes = 1
     simpleActionMenu(buttonText, minimumNotes, shiftNotesVertically, nil, settingVars)
 end
+
 -- Creates the "Shift Notes Left/Right" menu
 function shiftNotesHorizontallyMenu()
     local settingVars = {
@@ -351,6 +364,7 @@ function shiftNotesHorizontallyMenu()
     local minimumNotes = 1
     simpleActionMenu(buttonText, minimumNotes, shiftNotesHorizontally, nil, settingVars)
 end
+
 -- Creates the "Switch Note Lanes" menu
 function switchNoteLanesMenu()
     local settingVars = {
@@ -377,12 +391,14 @@ function switchNoteLanesMenu()
     simpleActionMenu(buttonText, minimumNotes, switchNoteLanes, nil, settingVars)
     showSwappingLane(settingVars)
 end
+
 -- Creates the "Flip Notes Vertically" menu
 function flipNotesVerticallyMenu()
     local buttonText = "Flip selected notes vertically"
     local minimumNotes = 1
     simpleActionMenu(buttonText, minimumNotes, flipNotesVertically, nil, nil)
 end
+
 -- Creates the "Scale Note Spacing" menu
 function scaleNoteSpacingMenu()
     local variablesListName = "scaleSpacingSettingVars"
@@ -406,12 +422,16 @@ function scaleNoteSpacingMenu()
     saveVariables(variablesListName, settingVars)
     addSeparator()
     local badIntensity = settingVars.intensity == 0
-    if badIntensity then imgui.Text(":jerry:") return end
-    
+    if badIntensity then
+        imgui.Text(":jerry:")
+        return
+    end
+
     local buttonText = "Scale spacing between selected notes"
     local minimumNotes = 2
     simpleActionMenu(buttonText, minimumNotes, scaleNoteSpacing, nil, settingVars)
 end
+
 -- Creates the "Shear Lane Positions" menu
 function shearLanePositionsMenu()
     local variablesListName = "shearPositionsSettingVars"
@@ -453,11 +473,12 @@ function editNotesLNsMenu()
     chooseSubMenu(menuVars, EDIT_LNS_MENUS)
     saveVariables("editLNsMenuVars", menuVars)
     local currentMenu = EDIT_LNS_MENUS[menuVars.subMenuIndex]
-    if currentMenu == "Apply Full LN"      then applyFullLNMenu() end
-    if currentMenu == "Apply Inverse LN"   then applyInverseLNMenu() end
-    if currentMenu == "Adjust LN Lengths"  then adjustLNLengthsMenu() end
+    if currentMenu == "Apply Full LN" then applyFullLNMenu() end
+    if currentMenu == "Apply Inverse LN" then applyInverseLNMenu() end
+    if currentMenu == "Adjust LN Lengths" then adjustLNLengthsMenu() end
     if currentMenu == "Change LNs to Rice" then changeLNsToRiceMenu() end
 end
+
 -- Creates the "Apply Full LN" menu
 function applyFullLNMenu()
     local settingVars = {
@@ -475,6 +496,7 @@ function applyFullLNMenu()
     local minimumNotes = 2
     simpleActionMenu(buttonText, minimumNotes, applyFullLN, nil, settingVars)
 end
+
 -- Creates the "Apply Inverse LN" menu
 function applyInverseLNMenu()
     local settingVars = {
@@ -492,6 +514,7 @@ function applyInverseLNMenu()
     local minimumNotes = 2
     simpleActionMenu(buttonText, minimumNotes, applyInverseLN, nil, settingVars)
 end
+
 -- Creates the "Adjust LN Lengths" menu
 function adjustLNLengthsMenu()
     local settingVars = {
@@ -504,12 +527,16 @@ function adjustLNLengthsMenu()
     chooseMilliseconds(settingVars)
     saveVariables("LNsToRiceSettingVars", settingVars)
     addSeparator()
-    if settingVars.milliseconds == 0 then imgui.Text(":jerry:") return end
-    
+    if settingVars.milliseconds == 0 then
+        imgui.Text(":jerry:")
+        return
+    end
+
     local buttonText = getAdjustLNLengthsButtonText(settingVars)
     local minimumNotes = 1
     simpleActionMenu(buttonText, minimumNotes, adjustLNLengths, nil, settingVars)
 end
+
 -- Creates the "Change LNs to Rice" menu
 function changeLNsToRiceMenu()
     local buttonText = "Change selected notes to rice"
@@ -540,6 +567,7 @@ function placeNotesBetweenNumber(settingVars)
     end
     addNotes(notesToAdd)
 end
+
 function placeNotesBetweenSnapGradient(settingVars)
     local startTime = state.SelectedHitObjects[1].StartTime
     local endTime = state.SelectedHitObjects[#state.SelectedHitObjects].StartTime
@@ -550,13 +578,15 @@ function placeNotesBetweenSnapGradient(settingVars)
     local i = 1
     local currentTime = startTime + timeDist1
     while (currentTime < endTime) do
-        addNoteToList(notesToAdd, state.SelectedHitObjects[1], currentTime, (i + state.SelectedHitObjects[1].Lane - 1) % 4 + 1, nil, nil, nil)
+        addNoteToList(notesToAdd, state.SelectedHitObjects[1], currentTime,
+            (i + state.SelectedHitObjects[1].Lane - 1) % 4 + 1, nil, nil, nil)
         local f = (currentTime - startTime) / (endTime - startTime)
-        currentTime = currentTime + f * timeDist2 + (1-f) * timeDist1
+        currentTime = currentTime + f * timeDist2 + (1 - f) * timeDist1
         i = i + 1
     end
     addNotes(notesToAdd)
 end
+
 -- Shifts selected notes vertically
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -573,6 +603,7 @@ function shiftNotesVertically(settingVars)
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
+
 -- Shifts selected notes horizontally across lanes
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -588,6 +619,7 @@ function shiftNotesHorizontally(settingVars)
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
+
 -- Switches the lanes of selected notes
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -605,6 +637,7 @@ function switchNoteLanes(settingVars)
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
+
 -- Flips selected notes vertically
 function flipNotesVertically()
     local notesToAdd = {}
@@ -624,6 +657,7 @@ function flipNotesVertically()
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
+
 -- Scales note spacing between selected notes
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -645,13 +679,14 @@ function scaleNoteSpacing(settingVars)
             local newEndPercentFromStart = scalePercent(settingVars, endPercentFromStart)
             newEndTime = boundaryTimes.min + newEndPercentFromStart * totalIntervalTime
             local isAcceptableEndTime = isAcceptableLNLength(newStartTime, newEndTime,
-                                                             settingVars.minLNLength)
+                settingVars.minLNLength)
             if not isAcceptableEndTime then newEndTime = 0 end
         end
         addNoteToList(notesToAdd, note, newStartTime, nil, newEndTime, nil, nil)
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
+
 -- Shears positions across the lanes of selected notes
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -695,6 +730,7 @@ function shearLanePositions(settingVars)
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
+
 -- Applies the full LN mod onto selected notes
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -715,6 +751,7 @@ function applyFullLN(settingVars)
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
+
 -- Converts a single list of notes from the same lane to full LN
 -- Algorithm is based on the inverse LN algorithm in convertLaneToInverseLN()
 -- Parameters
@@ -723,7 +760,7 @@ end
 --    notesInSameLane : list of notes in the same lane to convert and add for inverse LN [Table]
 function convertLaneToFullLN(settingVars, notesToAdd, notesInSameLane)
     if #notesInSameLane == 0 then return end
-    
+
     table.sort(notesInSameLane, sortAscendingStartTime)
     for i = 1, #notesInSameLane - 1 do
         local currentNote = notesInSameLane[i]
@@ -731,16 +768,17 @@ function convertLaneToFullLN(settingVars, notesToAdd, notesInSameLane)
         local nextNote = notesInSameLane[i + 1]
         local nextNoteTime = nextNote.StartTime
         local timeGap = calculateLNGapTime(settingVars, currentNoteTime, nextNoteTime)
-        
+
         local newEndTime = nextNoteTime - timeGap
         local isAcceptableEndTime = isAcceptableLNLength(currentNoteTime, newEndTime,
-                                                         settingVars.minLNLength)
+            settingVars.minLNLength)
         if not isAcceptableEndTime then newEndTime = 0 end
         addNoteToList(notesToAdd, currentNote, nil, nil, newEndTime, nil, nil)
     end
     local lastNote = notesInSameLane[#notesInSameLane]
     addNoteToList(notesToAdd, lastNote, nil, nil, nil, nil, nil)
 end
+
 -- Applies the inverse LN mod onto selected notes
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -761,6 +799,7 @@ function applyInverseLN(settingVars)
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
+
 -- Converts a single list of notes from the same lane to inverse LN
 --[[
 NOTE: Calculations/algorithms are mostly based on the ApplyInverse() method at
@@ -791,31 +830,31 @@ Relevant comments from the ApplyInverse() method:
 --    notesInSameLane : list of notes in the same lane to convert and add for inverse LN [Table]
 function convertLaneToInverseLN(settingVars, notesToAdd, notesInSameLane)
     if #notesInSameLane == 0 then return end
-    
+
     table.sort(notesInSameLane, sortAscendingStartTime)
     for i = 1, #notesInSameLane - 1 do
         local currentNote = notesInSameLane[i]
         local currentNoteTime = currentNote.StartTime
         local nextNote = notesInSameLane[i + 1]
         local nextNoteTime = nextNote.StartTime
-        
+
         local currentNoteIsLN = isLN(currentNote)
         local newStartTime = currentNoteTime
         if currentNoteIsLN then newStartTime = currentNote.EndTime end
-        
+
         local newEndTime = nextNoteTime
         local nextNoteIsLN = isLN(nextNote)
         local isLastInversion = (i == #notesInSameLane - 1)
         local timeGap = calculateLNGapTime(settingVars, currentNoteTime, nextNoteTime)
         if isLastInversion and (not nextNoteIsLN) then timeGap = 0 end
-        
+
         local timeGapNeeded = not nextNoteIsLN or (isLastInversion and nextNoteIsLN)
         if timeGapNeeded then newEndTime = newEndTime - timeGap end
-        
+
         local isUnacceptableEndTime = not isAcceptableLNLength(newStartTime, newEndTime,
-                                                               settingVars.minLNLength)
+            settingVars.minLNLength)
         if isUnacceptableEndTime and (not currentNoteIsLN) then newEndTime = 0 end
-        
+
         if not (isUnacceptableEndTime and currentNoteIsLN) then
             addNoteToList(notesToAdd, currentNote, newStartTime, nil, newEndTime, nil, nil)
         end
@@ -824,6 +863,7 @@ function convertLaneToInverseLN(settingVars, notesToAdd, notesInSameLane)
     local lastNoteIsLN = isLN(lastNote)
     if lastNoteIsLN or #notesInSameLane == 1 then table.insert(notesToAdd, lastNote) end
 end
+
 -- Adjusts the lengths of LNs of selected notes
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -846,6 +886,7 @@ function adjustLNLengths(settingVars)
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
+
 -- Changes selected notes to rice
 function changeLNsToRice()
     local notesToAdd = {}
@@ -866,64 +907,69 @@ end
 --    windowName : name of the next plugin window [String]
 function autoOpenNextWindow(windowName)
     if state.GetValue(windowName) then return end
-    
+
     imgui.SetNextWindowCollapsed(false)
     state.SetValue(windowName, true)
 end
+
 -- Makes the next plugin window focused/active if Shift + Tab is pressed
 function focusWindowOnHotkeyPress()
     local shiftKeyDown = utils.IsKeyDown(keys.LeftShift) or
-                         utils.IsKeyDown(keys.RightShift)
+        utils.IsKeyDown(keys.RightShift)
     local tabKeyPressed = utils.IsKeyPressed(keys.Tab)
     if shiftKeyDown and tabKeyPressed then imgui.SetNextWindowFocus() end
 end
+
 -- Centers the main plugin window if Ctrl + Shift + Tab is pressed
 function centerWindowOnHotkeyPress()
     local ctrlKeyDown = utils.IsKeyDown(keys.LeftControl) or
-                        utils.IsKeyDown(keys.RightControl)
+        utils.IsKeyDown(keys.RightControl)
     local shiftKeyDown = utils.IsKeyDown(keys.LeftShift) or
-                         utils.IsKeyDown(keys.RightShift)
+        utils.IsKeyDown(keys.RightShift)
     local tabKeyPressed = utils.IsKeyPressed(keys.Tab)
     if not (ctrlKeyDown and shiftKeyDown and tabKeyPressed) then return end
-    
+
     local windowWidth, windowHeight = table.unpack(state.WindowSize)
     local pluginWidth, pluginHeight = table.unpack(imgui.GetWindowSize())
     local centeringX = (windowWidth - pluginWidth) / 2
     local centeringY = (windowHeight - pluginHeight) / 2
-    local centeringCoords = {centeringX, centeringY}
+    local centeringCoords = { centeringX, centeringY }
     imgui.SetWindowPos(PLUGIN_NAME, centeringCoords)
 end
+
 -- Changes the highest level menu if Alt + (Q or W) is pressed
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
 function changeMenuOnHotkeyPress(globalVars)
     local altKeyDown = utils.IsKeyDown(keys.LeftAlt) or
-                       utils.IsKeyDown(keys.RightAlt)
+        utils.IsKeyDown(keys.RightAlt)
     local qKeyPressed = utils.IsKeyPressed(keys.Q)
     local wKeyPressed = utils.IsKeyPressed(keys.W)
     if not (altKeyDown and (qKeyPressed or wKeyPressed)) then return end
-    
+
     local newMenuIndex
     if qKeyPressed then newMenuIndex = globalVars.menuIndex - 1 end
     if wKeyPressed then newMenuIndex = globalVars.menuIndex + 1 end
     globalVars.menuIndex = wrapToInterval(newMenuIndex, 1, #MENUS)
 end
+
 -- Changes the sub menu if Alt + (A or S) is pressed
 -- Parameters
 --    menuVars     : list of variables used for the current menu [Table]
 --    subMenusList : list of sub-menus to chose from [Table]
 function changeSubMenuOnHotkeyPress(menuVars, subMenusList)
     local altKeyDown = utils.IsKeyDown(keys.LeftAlt) or
-                       utils.IsKeyDown(keys.RightAlt)
+        utils.IsKeyDown(keys.RightAlt)
     local aKeyPressed = utils.IsKeyPressed(keys.A)
     local sKeyPressed = utils.IsKeyPressed(keys.S)
     if not (altKeyDown and (aKeyPressed or sKeyPressed)) then return end
-    
+
     local newSubMenuIndex
     if aKeyPressed then newSubMenuIndex = menuVars.subMenuIndex - 1 end
     if sKeyPressed then newSubMenuIndex = menuVars.subMenuIndex + 1 end
-     menuVars.subMenuIndex = wrapToInterval(newSubMenuIndex, 1, #subMenusList)
+    menuVars.subMenuIndex = wrapToInterval(newSubMenuIndex, 1, #subMenusList)
 end
+
 -- Returns the new combo index when ALT + a specific key is pressed [Int]
 -- Parameters
 --    key        : key to change value [keys.~, from Quaver's MonoGame.Framework.Input.Keys enum]
@@ -931,25 +977,26 @@ end
 --    comboList  : list used by the combo [Table]
 function getNewComboIndexOnKeyPress(key, comboIndex, comboList)
     local altKeyDown = utils.IsKeyDown(keys.LeftAlt) or
-                       utils.IsKeyDown(keys.RightAlt)
+        utils.IsKeyDown(keys.RightAlt)
     if not altKeyDown then return comboIndex end
-    
+
     if not utils.IsKeyPressed(key) then return comboIndex end
-    
+
     local newComboIndex = comboIndex + 1
     return wrapToInterval(newComboIndex, 1, #comboList)
 end
+
 -- Returns the opposite boolean when ALT + a specific key is pressed [Int]
 -- Parameters
 --    key     : key to change value [keys.~, from Quaver's MonoGame.Framework.Input.Keys enum]
 --    boolean : [Boolean]
 function getNewBooleanOnKeyPress(key, boolean)
     local altKeyDown = utils.IsKeyDown(keys.LeftAlt) or
-                       utils.IsKeyDown(keys.RightAlt)
+        utils.IsKeyDown(keys.RightAlt)
     if not altKeyDown then return boolean end
-    
+
     if not utils.IsKeyPressed(key) then return boolean end
-    
+
     return not boolean
 end
 
@@ -964,36 +1011,41 @@ end
 --    globalVars : list of variables used globally across all menus [Table]
 function displayNoteInfoTooltip(globalVars)
     if globalVars.hideNoteInfoTooltip then return end
-    
+
     local oneNoteSelected = #state.SelectedHitObjects == 1
     if not oneNoteSelected then return end
-    
+
     local uiTooltipAlreadyActive = isTooltipAlreadyActive()
     if uiTooltipAlreadyActive then return end
-    
+
     setTooltipActive()
     imgui.BeginTooltip()
     imgui.Text("Note Info:")
     local selectedNote = state.SelectedHitObjects[1]
-    imgui.Text(table.concat({"StartTime = ", selectedNote.StartTime, " ms"}))
+    imgui.Text(table.concat({ "StartTime = ", selectedNote.StartTime, " ms" }))
     local noteIsNotLN = not isLN(selectedNote)
-    if noteIsNotLN then imgui.EndTooltip() return end
-    
+    if noteIsNotLN then
+        imgui.EndTooltip()
+        return
+    end
+
     local lnLength = selectedNote.EndTime - selectedNote.StartTime
-    imgui.Text(table.concat({"EndTime = ", selectedNote.EndTime, " ms"}))
-    imgui.Text(table.concat({"LN Length = ", lnLength, " ms"}))
+    imgui.Text(table.concat({ "EndTime = ", selectedNote.EndTime, " ms" }))
+    imgui.Text(table.concat({ "LN Length = ", lnLength, " ms" }))
     imgui.EndTooltip()
 end
+
 -- Returns text for the action button of the "Shift Notes Up/Down" menu [String]
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function getShiftVerticalButtonText(settingVars)
-    local buttonTextTable = {"Shift selected notes by "}
+    local buttonTextTable = { "Shift selected notes by " }
     if settingVars.milliseconds > 0 then buttonTextTable[#buttonTextTable + 1] = "+" end
     buttonTextTable[#buttonTextTable + 1] = settingVars.milliseconds
     buttonTextTable[#buttonTextTable + 1] = " ms"
     return table.concat(buttonTextTable)
 end
+
 -- Creates the widget for importing old lanes in new positions
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1006,6 +1058,7 @@ function importLanesWidget(settingVars)
     if importTextChanged then importLaneNumbers(settingVars) end
     helpMarker("Import space-separated numbers\n\nExamples (4K & 7K):\n2 1 4 3\n3 2 1 4 7 6 5")
 end
+
 -- Imports lane numbers for the switch note lanes menu
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1021,36 +1074,39 @@ function importLaneNumbers(settingVars)
     end
     local laneNumbersNoDuplicates = removeDuplicateValues(importedLaneNumbers)
     if #laneNumbersNoDuplicates ~= totalNumLanes then return end
-    
+
     settingVars.oldLanesInNewLanes = laneNumbersNoDuplicates
 end
+
 -- Shows the old lanes in the new lane positions as buttons (for switching note lanes)
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function displayOldLanesInNewLanes(settingVars)
-    local totalNumLanes = map.GetKeyCount() 
+    local totalNumLanes = map.GetKeyCount()
     for i = 1, totalNumLanes do
         if i ~= 1 then imgui.SameLine(0, SAMELINE_SPACING) end
         newLaneButton(settingVars, i)
     end
 end
+
 -- Creates a new lane button (for switching note lanes)
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 --    i           : current new lane button number to create [Int]
 function newLaneButton(settingVars, i)
     local currentOldLane = settingVars.oldLanesInNewLanes[i]
-    local buttonText = table.concat({currentOldLane, "##oldLaneInNewLaneButton"})
+    local buttonText = table.concat({ currentOldLane, "##oldLaneInNewLaneButton" })
     if not imgui.Button(buttonText, LANE_BUTTON_SIZE) then return end
-    
+
     table.insert(settingVars.selectedLaneIndexes, i)
 end
+
 -- Updates selected lane indexes (for switching note lanes)
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function updateSelectedLaneIndexes(settingVars)
     if #settingVars.selectedLaneIndexes < 2 then return end
-    
+
     local laneIndex1 = settingVars.selectedLaneIndexes[1]
     local laneIndex2 = settingVars.selectedLaneIndexes[2]
     local oldLane1 = settingVars.oldLanesInNewLanes[laneIndex1]
@@ -1059,15 +1115,16 @@ function updateSelectedLaneIndexes(settingVars)
     settingVars.oldLanesInNewLanes[laneIndex2] = oldLane1
     settingVars.selectedLaneIndexes = {}
 end
+
 -- Shows the currently selected lane to be swapped (for switching note lanes)
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function showSwappingLane(settingVars)
     if #settingVars.selectedLaneIndexes == 0 then return end
-    
+
     local uiTooltipAlreadyActive = isTooltipAlreadyActive()
     if uiTooltipAlreadyActive then return end
-    
+
     setTooltipActive()
     imgui.BeginTooltip()
     local selectedLaneIndex = settingVars.selectedLaneIndexes[1]
@@ -1075,6 +1132,7 @@ function showSwappingLane(settingVars)
     imgui.Button(selectedOldLane, LANE_BUTTON_SIZE)
     imgui.EndTooltip()
 end
+
 -- Randomizes the old lanes in new lanes list
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1087,17 +1145,19 @@ function randomizeOldLanesInNewLanes(settingVars)
         table.insert(settingVars.oldLanesInNewLanes, randomLane)
     end
 end
+
 -- Resets the old lanes in new lanes list
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function resetOldLanesInNewLanes(settingVars)
     settingVars.oldLanesInNewLanes = enumeratedList(map.GetKeyCount())
 end
+
 -- Returns text for the action button of the "Adjust LN Lengths" menu [String]
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function getAdjustLNLengthsButtonText(settingVars)
-    local buttonTextTable = {"Change selected notes' LN "}
+    local buttonTextTable = { "Change selected notes' LN " }
     if settingVars.targetLNStart then
         table.insert(buttonTextTable, "start ")
     else
@@ -1109,24 +1169,26 @@ function getAdjustLNLengthsButtonText(settingVars)
     buttonTextTable[#buttonTextTable + 1] = " ms"
     return table.concat(buttonTextTable)
 end
+
 -- Updates the demo info stored in settingVars
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function updateDemoInfo(settingVars)
     settingVars.demoTotalDistances = {}
-    local percents = generateLinearSet(0, 1, settingVars.demoNotes) 
+    local percents = generateLinearSet(0, 1, settingVars.demoNotes)
     for i = 1, #percents do
         local oldPercent = percents[i]
         local newPercent = scalePercent(settingVars, oldPercent)
         settingVars.demoTotalDistances[i] = newPercent
     end
     settingVars.demoTotalDistScale = getPlotScale(settingVars.demoTotalDistances)
-    local shearingNotesLeft = settingVars.directionRight == false -- accounts for nil value 
+    local shearingNotesLeft = settingVars.directionRight == false -- accounts for nil value
     if shearingNotesLeft then
         settingVars.demoTotalDistances = getReverseList(settingVars.demoTotalDistances)
     end
 end
--- Makes the window showing projected outputs 
+
+-- Makes the window showing projected outputs
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function showProjectedOutputWindow(settingVars)
@@ -1139,6 +1201,7 @@ function showProjectedOutputWindow(settingVars)
     chooseDemoNotes(settingVars)
     imgui.End()
 end
+
 -- Calculates and returns a list of the minimum and maximum scale for a plot [Table]
 -- Parameters
 --    plotValues : set of numbers to calculate plot scale for [Table]
@@ -1153,8 +1216,9 @@ function getPlotScale(plotValues)
     if max <= 0 then maxScale = 0 end
     -- restrict the plot range to non-negative values when all values are non-negative
     if min >= 0 then minScale = 0 end
-    return {min = minScale, max = maxScale}
+    return { min = minScale, max = maxScale }
 end
+
 -- Creates a bar graph
 -- Parameters
 --    title  : title of the graph [String]
@@ -1162,7 +1226,7 @@ end
 --    scales : list of min and max scales [Table]
 function plotBarGraph(title, values, scales)
     if #values == 0 then return end
-    
+
     local minScale = scales.min
     local maxScale = scales.max
     local plotSize = PLOT_GRAPH_SIZE
@@ -1187,9 +1251,10 @@ function addNoteToList(noteList, defaultNote, startTime, lane, endTime, hitSound
     local newHitSound = hitSound or defaultNote.HitSound
     local newEditorLayer = editorLayer or defaultNote.EditorLayer
     local newNote = utils.CreateHitObject(newStartTime, newLane, newEndTime,
-                                          newHitSound, newEditorLayer)
+        newHitSound, newEditorLayer)
     table.insert(noteList, newNote)
 end
+
 -- Calculates and returns the current note's LN gap time based on the beat snap [Int]
 -- Parameters
 --    settingVars     : list of variables used for the current menu [Table]
@@ -1198,12 +1263,12 @@ end
 function calculateLNGapTime(settingVars, currentNoteTime, nextNoteTime)
     local beatSnap = settingVars.beatSnapGap
     if beatSnap == 0 then return settingVars.minLNGapTime end
-    
+
     local timingPointAtCurrentNote = map.GetTimingPointAt(currentNoteTime)
     if timingPointAtCurrentNote == nil then timingPointAtCurrentNote = map.TimingPoints[1] end
     local timingPointAtNextNote = map.GetTimingPointAt(nextNoteTime)
     if timingPointAtNextNote == nil then timingPointAtNextNote = timingPointAtCurrentNote end
-    
+
     -- The larger BPM gives us the shortest duration to use for calculations that are safe
     local maxBPM = math.max(timingPointAtCurrentNote.Bpm, timingPointAtNextNote.Bpm)
     local millisecondsInMinute = 60000
@@ -1212,6 +1277,7 @@ function calculateLNGapTime(settingVars, currentNoteTime, nextNoteTime)
     local timeGap = math.max(settingVars.minLNGapTime, roundedSnapGapDuration)
     return timeGap
 end
+
 -- Returns whether or not there's enough selected notes [Boolean]
 -- Parameters
 --    minimumNotes : minimum number of notes needed to be selected [Int]
@@ -1219,15 +1285,16 @@ function checkEnoughSelectedNotes(minimumNotes)
     local selectedNotes = state.SelectedHitObjects
     local numSelectedNotes = #selectedNotes
     if numSelectedNotes == 0 then return false end
-    
+
     if numSelectedNotes > map.GetKeyCount() then return true end
-    
+
     if minimumNotes == 1 then return true end
-    
+
     local firstSelectedStartTime = selectedNotes[1].StartTime
     local lastSelectedStartTime = selectedNotes[numSelectedNotes].StartTime
     return firstSelectedStartTime ~= lastSelectedStartTime
 end
+
 -- Returns a table with the minimum time and maximum time of a list of notes [Table]
 -- Parameters
 --    notes : list of notes [Table]
@@ -1238,12 +1305,14 @@ function getBoundaryTimes(notes)
         min = math.min(note.StartTime, min)
         max = math.max(note.StartTime, note.EndTime, max)
     end
-    return {min = min, max = max}
+    return { min = min, max = max }
 end
+
 -- Returns whether or not the given note is a LN [Boolean]
 -- Parameters
 --    note : [Quaver HitObject]
 function isLN(note) return note.EndTime ~= 0 end
+
 -- Returns whether or not an LN has an acceptable length [Boolean]
 -- Parameters
 --    startTime   : start time in milliseconds of the LN [Int]
@@ -1253,12 +1322,14 @@ function isAcceptableLNLength(startTime, endTime, minLNLength)
     local lnLength = endTime - startTime
     return lnLength >= minLNLength
 end
+
 -- Adds the given notes
 -- Parameters
 --    notesToAdd : list of notes to add [Table]
 function addNotes(notesToAdd)
     actions.PlaceHitObjectBatch(notesToAdd)
 end
+
 -- Removes and adds the given notes (and auto-selects the newly added notes)
 -- Parameters
 --    notesToRemove : list of notes to remove [Table]
@@ -1285,16 +1356,26 @@ end
 --    settingVars : list of variables used for the current menu [Table]
 function button(text, size, key, altRequired, func, globalVars, settingVars)
     local altKeyDown = utils.IsKeyDown(keys.LeftAlt) or
-                       utils.IsKeyDown(keys.RightAlt)
+        utils.IsKeyDown(keys.RightAlt)
     local keyPressed = utils.IsKeyPressed(key)
     local buttonNotClicked = not imgui.Button(text, size)
     local keysNotPressed = not keyPressed or (altRequired and (not altKeyDown))
     if buttonNotClicked and keysNotPressed then return end
-    if globalVars and settingVars then func(globalVars, settingVars) return end
-    if globalVars then func(globalVars) return end
-    if settingVars then func(settingVars) return end
+    if globalVars and settingVars then
+        func(globalVars, settingVars)
+        return
+    end
+    if globalVars then
+        func(globalVars)
+        return
+    end
+    if settingVars then
+        func(settingVars)
+        return
+    end
     func()
 end
+
 -- Creates an imgui combo (dropdown list)
 -- Returns the updated index of the item in the list that is selected [Int]
 -- Parameters
@@ -1305,7 +1386,7 @@ function combo(label, list, listIndex)
     local currentComboItem = list[listIndex]
     local comboFlag = imgui_combo_flags.HeightLarge
     if not imgui.BeginCombo(label, currentComboItem, comboFlag) then return listIndex end
-    
+
     local newListIndex = listIndex
     for i = 1, #list do
         local listItem = list[i]
@@ -1314,6 +1395,7 @@ function combo(label, list, listIndex)
     imgui.EndCombo()
     return newListIndex
 end
+
 -- Creates a simple action menu + button that does things
 -- Parameters
 --    buttonText   : text on the button that appears [String]
@@ -1321,19 +1403,23 @@ end
 --    actionfunc   : function to execute once button is pressed [Function]
 --    globalVars   : list of variables used globally across all menus [Table]
 --    settingVars  : list of variables used for the current menu [Table]
-function simpleActionMenu(buttonText, minimumNotes, actionfunc, globalVars, settingVars)    
+function simpleActionMenu(buttonText, minimumNotes, actionfunc, globalVars, settingVars)
     local enoughSelectedNotes = checkEnoughSelectedNotes(minimumNotes)
-    local infoText = table.concat({"Select ", minimumNotes, " or more notes"})
-    if not enoughSelectedNotes then imgui.Text(infoText) return end
-    
+    local infoText = table.concat({ "Select ", minimumNotes, " or more notes" })
+    if not enoughSelectedNotes then
+        imgui.Text(infoText)
+        return
+    end
+
     button(buttonText, ACTION_BUTTON_SIZE, keys.T, false, actionfunc, globalVars, settingVars)
     tooltip("Press ' T ' on your keyboard to do the same thing as this button")
 end
+
 -- Returns whether or not a tooltip is already active [Boolean]
 function isTooltipAlreadyActive() return state.GetValue("uiTooltipActive") end
+
 -- Sets the state to recognize that a tooltip is active
 function setTooltipActive() state.SetValue("uiTooltipActive", true) end
-
 
 ---------------------------------------------------------------------------------------------- Math
 
@@ -1343,15 +1429,16 @@ function setTooltipActive() state.SetValue("uiTooltipActive", true) end
 --    endValue   : ending value of the linear set [Int/Float]
 --    numValues  : total number of values in the linear set [Int]
 function generateLinearSet(startValue, endValue, numValues)
-    local linearSet = {startValue}
+    local linearSet = { startValue }
     if numValues < 2 then return linearSet end
-    
+
     local increment = (endValue - startValue) / (numValues - 1)
     for i = 1, (numValues - 1) do
         table.insert(linearSet, startValue + i * increment)
     end
     return linearSet
 end
+
 -- Scales a percent value based on the selected scale type
 -- Scaling graphs on Desmos: https://www.desmos.com/calculator/z00xjksfnk
 -- Parameters
@@ -1373,7 +1460,7 @@ function scalePercent(settingVars, percent)
         newPercent = workingPercent ^ exponent
     elseif scaleType == "Circular" then
         if a == 0 then return percent end
-        
+
         local b = 1 / (a ^ (a + 1))
         local radicand = (b + 1) ^ 2 + b ^ 2 - (workingPercent + b) ^ 2
         newPercent = b + 1 - math.sqrt(radicand)
@@ -1397,18 +1484,20 @@ function scalePercent(settingVars, percent)
         --]]
         if a == 0 then return percent end
         if a == 1 then a = a + -1e727 end
-        
+
         local c = a / (1 - a)
         newPercent = (workingPercent ^ 2) * (1 + c) / (workingPercent + c)
     end
     if speedUpType then newPercent = 1 - newPercent end
     return clampToInterval(newPercent, 0, 1)
 end
+
 -- Returns the average of two numbers [Int/Float]
 -- Parameters
 --    x : first number [Int/Float]
 --    y : second number [Int/Float]
 function average(x, y) return (x + y) / 2 end
+
 -- Rounds a number to a given amount of decimal places
 -- Returns the rounded number [Int/Float]
 -- Parameters
@@ -1418,6 +1507,7 @@ function round(number, decimalPlaces)
     local multiplier = 10 ^ decimalPlaces
     return math.floor(multiplier * number + 0.5) / multiplier
 end
+
 -- Shifts and wraps a lane number to still be within the map's lanes
 -- Returns the wrapped lane number [Int]
 -- Parameters
@@ -1428,6 +1518,7 @@ function shiftWrapLaneNum(laneNum, laneNumChange, totalNumLanes)
     local unwrappedNewLane = laneNum + laneNumChange
     return ((unwrappedNewLane - 1) % totalNumLanes) + 1
 end
+
 -- Restricts a number to be within a closed interval
 -- Returns the result of the restriction [Int/Float]
 -- Parameters
@@ -1439,6 +1530,7 @@ function clampToInterval(number, lowerBound, upperBound)
     if number > upperBound then return upperBound end
     return number
 end
+
 -- Restricts a number to be within a closed interval that wraps around
 -- Returns the result of the restriction [Int/Float]
 -- Parameters
@@ -1450,6 +1542,7 @@ function wrapToInterval(number, lowerBound, upperBound)
     if number > upperBound then return lowerBound end
     return number
 end
+
 -- Sorting function for objects 'a' and 'b' that returns whether a.StartTime < b.StartTime [Boolean]
 -- Parameters
 --    a : first SV
@@ -1469,6 +1562,7 @@ function getReverseList(list)
     end
     return reverseList
 end
+
 -- Returns an ascending list of whole numbers starting from 1 [Table]
 -- Parameters
 --    finalNumber : final number of the list [Int]
@@ -1479,6 +1573,7 @@ function enumeratedList(finalNumber)
     end
     return numbersList
 end
+
 -- Combs through a list and locates unique values
 -- Returns a list of only unique values (no duplicates) [Table]
 -- Parameters
@@ -1505,9 +1600,10 @@ end
 function chooseBeatSnapGap(settingVars)
     local _, newBeatSnapGap = imgui.inputFloat("Snap Gap", settingVars.beatSnapGap, 1, 1, "%.2f")
     settingVars.beatSnapGap = clampToInterval(newBeatSnapGap, 0, FUNNY_NUMBER)
-    helpMarker("Beat snap gap between LNs when applying inverse.\n"..
-               "If beat snap gap is 0, the minimum LN gap will be used instead.")
+    helpMarker("Beat snap gap between LNs when applying inverse.\n" ..
+        "If beat snap gap is 0, the minimum LN gap will be used instead.")
 end
+
 -- Lets you choose the behavior of something (speed up or slow down)
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1515,8 +1611,9 @@ end
 function chooseBehavior(settingVars, key)
     settingVars.behaviorIndex = combo("Behavior", BEHAVIORS, settingVars.behaviorIndex)
     settingVars.behaviorIndex = getNewComboIndexOnKeyPress(key, settingVars.behaviorIndex,
-                                                           BEHAVIORS)
+        BEHAVIORS)
 end
+
 -- Lets you choose the color theme of the plugin
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
@@ -1524,25 +1621,26 @@ end
 function chooseColorTheme(globalVars, key)
     globalVars.colorThemeIndex = combo("Color Theme", COLOR_THEMES, globalVars.colorThemeIndex)
     globalVars.colorThemeIndex = getNewComboIndexOnKeyPress(key, globalVars.colorThemeIndex,
-                                                            COLOR_THEMES)
+        COLOR_THEMES)
     local currentTheme = COLOR_THEMES[globalVars.colorThemeIndex]
     local isRGBColorTheme = currentTheme == "Tobi's RGB Glass" or
-                            currentTheme == "Glass + RGB" or  
-                            currentTheme == "Incognito + RGB" or
-                            currentTheme == "RGB Gamer Mode" or
-                            currentTheme == "edom remag BGR" or
-                            currentTheme == "BGR + otingocnI"
+        currentTheme == "Glass + RGB" or
+        currentTheme == "Incognito + RGB" or
+        currentTheme == "RGB Gamer Mode" or
+        currentTheme == "edom remag BGR" or
+        currentTheme == "BGR + otingocnI"
     if not isRGBColorTheme then return end
-    
+
     chooseRGBPeriod(globalVars)
 end
+
 -- Lets you choose the number of demo notes
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function chooseDemoNotes(settingVars)
     local maxNotes = FUNNY_NUMBER
     local minNotes = 3
-    local shearingNotes = settingVars.directionRight ~= nil 
+    local shearingNotes = settingVars.directionRight ~= nil
     if shearingNotes then
         maxNotes = map.GetKeyCount()
         minNotes = 2
@@ -1550,6 +1648,7 @@ function chooseDemoNotes(settingVars)
     _, settingVars.demoNotes = imgui.InputInt("Demo Notes", settingVars.demoNotes, 1, 1)
     settingVars.demoNotes = clampToInterval(settingVars.demoNotes, minNotes, maxNotes)
 end
+
 -- Lets you choose a direction
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1567,6 +1666,7 @@ function chooseDirection(settingVars, key)
     end
     settingVars.directionRight = getNewBooleanOnKeyPress(key, settingVars.directionRight)
 end
+
 -- Lets you choose the intensity of something
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1575,6 +1675,7 @@ function chooseIntensity(settingVars)
     helpMarker("Ctrl + click the slider to input any specific positive value")
     settingVars.intensity = clampToInterval(settingVars.intensity, 0, FUNNY_NUMBER)
 end
+
 -- Lets you choose the highest-level menu
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
@@ -1584,12 +1685,14 @@ function chooseMenu(globalVars)
     imgui.PopItemWidth()
     changeMenuOnHotkeyPress(globalVars)
 end
+
 -- Lets you choose an integer number of milliseconds
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function chooseMilliseconds(settingVars)
     _, settingVars.milliseconds = imgui.InputInt("Milliseconds", settingVars.milliseconds, 1, 1)
 end
+
 -- Lets you choose the minimum LN gap length in milliseconds
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1598,6 +1701,7 @@ function chooseMinLNGapTime(settingVars)
     settingVars.minLNGapTime = clampToInterval(newLNGapTime, 0, FUNNY_NUMBER)
     helpMarker("Minimum allowed LN gap length in millseconds")
 end
+
 -- Lets you choose the minimum LN length in milliseconds
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1606,19 +1710,22 @@ function chooseMinLNLength(settingVars)
     settingVars.minLNLength = clampToInterval(newLNLength, 0, FUNNY_NUMBER)
     helpMarker("Minimum allowed LN length in millseconds")
 end
+
 -- Lets you choose number of notes to place
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
-function chooseNoteCount(settingVars) 
+function chooseNoteCount(settingVars)
     _, settingVars.noteCount = imgui.InputInt("Note Count", settingVars.noteCount, 1, 1)
     settingVars.noteCount = clampToInterval(settingVars.noteCount, 1, FUNNY_NUMBER)
 end
+
 -- Lets you choose two snaps to interpolate from
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
-function chooseSnapCount(settingVars) 
+function chooseSnapCount(settingVars)
     _, settingVars.snaps = imgui.InputInt2("Start/End Snaps", settingVars.snaps)
 end
+
 -- Lets you choose the note info tooltip visibility
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
@@ -1629,15 +1736,17 @@ function chooseNoteInfoTooltipVisibility(globalVars, key)
     helpMarker("Selecting a single note shows its info in a tooltip")
     globalVars.hideNoteInfoTooltip = getNewBooleanOnKeyPress(key, globalVars.hideNoteInfoTooltip)
 end
+
 -- Lets you choose the length in seconds of one RGB color cycle
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
 function chooseRGBPeriod(globalVars)
     _, globalVars.rgbPeriod = imgui.InputFloat("RGB cycle length", globalVars.rgbPeriod, 0, 0,
-                                               "%.0f seconds")
+        "%.0f seconds")
     globalVars.rgbPeriod = clampToInterval(globalVars.rgbPeriod, MIN_RGB_CYCLE_TIME,
-                                           MAX_RGB_CYCLE_TIME)
+        MAX_RGB_CYCLE_TIME)
 end
+
 -- Lets you choose how to scale note spacing
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1645,8 +1754,9 @@ end
 function chooseScaleType(settingVars, key)
     settingVars.scaleTypeIndex = combo("Scale Type", SCALE_TYPES, settingVars.scaleTypeIndex)
     settingVars.scaleTypeIndex = getNewComboIndexOnKeyPress(key, settingVars.scaleTypeIndex,
-                                                            SCALE_TYPES)
+        SCALE_TYPES)
 end
+
 -- Lets you choose the style theme of the plugin
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
@@ -1654,8 +1764,9 @@ end
 function chooseStyleTheme(globalVars, key)
     globalVars.styleThemeIndex = combo("Style Theme", STYLE_THEMES, globalVars.styleThemeIndex)
     globalVars.styleThemeIndex = getNewComboIndexOnKeyPress(key, globalVars.styleThemeIndex,
-                                                            STYLE_THEMES)
+        STYLE_THEMES)
 end
+
 -- Lets you choose the sub-menu
 -- Parameters
 --    menuVars     : list of variables used for the current menu [Table]
@@ -1667,6 +1778,7 @@ function chooseSubMenu(menuVars, subMenusList)
     changeSubMenuOnHotkeyPress(menuVars, subMenusList)
     addSeparator()
 end
+
 -- Lets you choose the target LN spot to change
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
@@ -1694,638 +1806,655 @@ end
 --    globalVars : list of variables used globally across all menus [Table]
 function setPluginAppearanceStyles(globalVars)
     local styleTheme = STYLE_THEMES[globalVars.styleThemeIndex]
-    
+
     local boxedStyle = styleTheme == "Boxed" or
-                       styleTheme == "Boxed + Border"
+        styleTheme == "Boxed + Border"
     local cornerRoundnessValue = 5 -- up to 12, 14 for WindowRounding and 16 for ChildRounding
     if boxedStyle then cornerRoundnessValue = 0 end
-    
+
     local borderedStyle = styleTheme == "Rounded + Border" or
-                          styleTheme == "Boxed + Border"
+        styleTheme == "Boxed + Border"
     local borderSize = 0
     if borderedStyle then borderSize = 1 end
-    
-    imgui.PushStyleVar( imgui_style_var.FrameBorderSize,    borderSize           )
-    imgui.PushStyleVar( imgui_style_var.WindowPadding,      { PADDING_WIDTH, 8 } )
-    imgui.PushStyleVar( imgui_style_var.FramePadding,       { PADDING_WIDTH, 5 } )
-    imgui.PushStyleVar( imgui_style_var.ItemSpacing,        { DEFAULT_WIDGET_HEIGHT / 2 - 1, 4 } )
-    imgui.PushStyleVar( imgui_style_var.ItemInnerSpacing,   { SAMELINE_SPACING, 6 } )
-    imgui.PushStyleVar( imgui_style_var.WindowRounding,     cornerRoundnessValue )
-    imgui.PushStyleVar( imgui_style_var.ChildRounding,      cornerRoundnessValue )
-    imgui.PushStyleVar( imgui_style_var.FrameRounding,      cornerRoundnessValue )
-    imgui.PushStyleVar( imgui_style_var.GrabRounding,       cornerRoundnessValue )
-    imgui.PushStyleVar( imgui_style_var.ScrollbarRounding,  cornerRoundnessValue )
-    imgui.PushStyleVar( imgui_style_var.TabRounding,        cornerRoundnessValue )
-    
+
+    imgui.PushStyleVar(imgui_style_var.FrameBorderSize, borderSize)
+    imgui.PushStyleVar(imgui_style_var.WindowPadding, { PADDING_WIDTH, 8 })
+    imgui.PushStyleVar(imgui_style_var.FramePadding, { PADDING_WIDTH, 5 })
+    imgui.PushStyleVar(imgui_style_var.ItemSpacing, { DEFAULT_WIDGET_HEIGHT / 2 - 1, 4 })
+    imgui.PushStyleVar(imgui_style_var.ItemInnerSpacing, { SAMELINE_SPACING, 6 })
+    imgui.PushStyleVar(imgui_style_var.WindowRounding, cornerRoundnessValue)
+    imgui.PushStyleVar(imgui_style_var.ChildRounding, cornerRoundnessValue)
+    imgui.PushStyleVar(imgui_style_var.FrameRounding, cornerRoundnessValue)
+    imgui.PushStyleVar(imgui_style_var.GrabRounding, cornerRoundnessValue)
+    imgui.PushStyleVar(imgui_style_var.ScrollbarRounding, cornerRoundnessValue)
+    imgui.PushStyleVar(imgui_style_var.TabRounding, cornerRoundnessValue)
+
     -- Doesn't work even though TabBorderSize is changeable in the style editor demo
-    -- imgui.PushStyleVar( imgui_style_var.TabBorderSize,      borderSize           ) 
-    
+    -- imgui.PushStyleVar( imgui_style_var.TabBorderSize,      borderSize           )
+
     -- https://github.com/ocornut/imgui/issues/7297
     -- Apparently TabBorderSize doesn't have a imgui_style_var, so it can only be changed with
     -- imgui.GetStyle() which hasn't worked from my testing in Quaver plugins
 end
+
 -- Configures the plugin GUI colors
 -- Parameters
 --    globalVars : list of variables used globally across all menus [Table]
 function setPluginAppearanceColors(globalVars)
     local colorTheme = COLOR_THEMES[globalVars.colorThemeIndex]
     local rgbPeriod = globalVars.rgbPeriod
-    if colorTheme == "Classic"          then setClassicColors() end
-    if colorTheme == "Strawberry"       then setStrawberryColors() end
-    if colorTheme == "Amethyst"         then setAmethystColors() end
-    if colorTheme == "Tree"             then setTreeColors() end
-    if colorTheme == "Barbie"           then setBarbieColors() end
-    if colorTheme == "Incognito"        then setIncognitoColors() end
-    if colorTheme == "Incognito + RGB"  then setIncognitoRGBColors(rgbPeriod) end
-    if colorTheme == "Tobi's Glass"     then setTobiGlassColors() end
+    if colorTheme == "Classic" then setClassicColors() end
+    if colorTheme == "Strawberry" then setStrawberryColors() end
+    if colorTheme == "Amethyst" then setAmethystColors() end
+    if colorTheme == "Tree" then setTreeColors() end
+    if colorTheme == "Barbie" then setBarbieColors() end
+    if colorTheme == "Incognito" then setIncognitoColors() end
+    if colorTheme == "Incognito + RGB" then setIncognitoRGBColors(rgbPeriod) end
+    if colorTheme == "Tobi's Glass" then setTobiGlassColors() end
     if colorTheme == "Tobi's RGB Glass" then setTobiRGBGlassColors(rgbPeriod) end
-    if colorTheme == "Glass"            then setGlassColors() end
-    if colorTheme == "Glass + RGB"      then setGlassRGBColors(rgbPeriod) end
-    if colorTheme == "RGB Gamer Mode"   then setRGBGamerColors(rgbPeriod) end
-    if colorTheme == "edom remag BGR"   then setInvertedRGBGamerColors(rgbPeriod) end
-    if colorTheme == "BGR + otingocnI"  then setInvertedIncognitoRGBColors(rgbPeriod) end
-    if colorTheme == "otingocnI"        then setInvertedIncognitoColors() end
+    if colorTheme == "Glass" then setGlassColors() end
+    if colorTheme == "Glass + RGB" then setGlassRGBColors(rgbPeriod) end
+    if colorTheme == "RGB Gamer Mode" then setRGBGamerColors(rgbPeriod) end
+    if colorTheme == "edom remag BGR" then setInvertedRGBGamerColors(rgbPeriod) end
+    if colorTheme == "BGR + otingocnI" then setInvertedIncognitoRGBColors(rgbPeriod) end
+    if colorTheme == "otingocnI" then setInvertedIncognitoColors() end
 end
+
 -- Sets plugin colors to the "Classic" theme
 function setClassicColors()
-    imgui.PushStyleColor( imgui_col.WindowBg,               { 0.00, 0.00, 0.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 { 0.81, 0.88, 1.00, 0.30 } )
-    imgui.PushStyleColor( imgui_col.FrameBg,                { 0.14, 0.24, 0.28, 1.00 } )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         { 0.24, 0.34, 0.38, 1.00 } )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          { 0.29, 0.39, 0.43, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBg,                { 0.41, 0.48, 0.65, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          { 0.51, 0.58, 0.75, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       { 0.51, 0.58, 0.75, 0.50 } )
-    imgui.PushStyleColor( imgui_col.CheckMark,              { 0.81, 0.88, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             { 0.56, 0.63, 0.75, 1.00 } )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       { 0.61, 0.68, 0.80, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Button,                 { 0.31, 0.38, 0.50, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          { 0.41, 0.48, 0.60, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           { 0.51, 0.58, 0.70, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Tab,                    { 0.31, 0.38, 0.50, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TabHovered,             { 0.51, 0.58, 0.75, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TabActive,              { 0.51, 0.58, 0.75, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Header,                 { 0.81, 0.88, 1.00, 0.40 } )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          { 0.81, 0.88, 1.00, 0.50 } )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           { 0.81, 0.88, 1.00, 0.54 } )
-    imgui.PushStyleColor( imgui_col.Separator,              { 0.81, 0.88, 1.00, 0.30 } )
-    imgui.PushStyleColor( imgui_col.Text,                   { 1.00, 1.00, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         { 0.81, 0.88, 1.00, 0.40 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          { 0.31, 0.38, 0.50, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   { 0.41, 0.48, 0.60, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    { 0.51, 0.58, 0.70, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLines,              { 0.61, 0.61, 0.61, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       { 1.00, 0.43, 0.35, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          { 0.90, 0.70, 0.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   { 1.00, 0.60, 0.00, 1.00 } )
+    imgui.PushStyleColor(imgui_col.WindowBg, { 0.00, 0.00, 0.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, { 0.81, 0.88, 1.00, 0.30 })
+    imgui.PushStyleColor(imgui_col.FrameBg, { 0.14, 0.24, 0.28, 1.00 })
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, { 0.24, 0.34, 0.38, 1.00 })
+    imgui.PushStyleColor(imgui_col.FrameBgActive, { 0.29, 0.39, 0.43, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBg, { 0.41, 0.48, 0.65, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBgActive, { 0.51, 0.58, 0.75, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, { 0.51, 0.58, 0.75, 0.50 })
+    imgui.PushStyleColor(imgui_col.CheckMark, { 0.81, 0.88, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.SliderGrab, { 0.56, 0.63, 0.75, 1.00 })
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, { 0.61, 0.68, 0.80, 1.00 })
+    imgui.PushStyleColor(imgui_col.Button, { 0.31, 0.38, 0.50, 1.00 })
+    imgui.PushStyleColor(imgui_col.ButtonHovered, { 0.41, 0.48, 0.60, 1.00 })
+    imgui.PushStyleColor(imgui_col.ButtonActive, { 0.51, 0.58, 0.70, 1.00 })
+    imgui.PushStyleColor(imgui_col.Tab, { 0.31, 0.38, 0.50, 1.00 })
+    imgui.PushStyleColor(imgui_col.TabHovered, { 0.51, 0.58, 0.75, 1.00 })
+    imgui.PushStyleColor(imgui_col.TabActive, { 0.51, 0.58, 0.75, 1.00 })
+    imgui.PushStyleColor(imgui_col.Header, { 0.81, 0.88, 1.00, 0.40 })
+    imgui.PushStyleColor(imgui_col.HeaderHovered, { 0.81, 0.88, 1.00, 0.50 })
+    imgui.PushStyleColor(imgui_col.HeaderActive, { 0.81, 0.88, 1.00, 0.54 })
+    imgui.PushStyleColor(imgui_col.Separator, { 0.81, 0.88, 1.00, 0.30 })
+    imgui.PushStyleColor(imgui_col.Text, { 1.00, 1.00, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, { 0.81, 0.88, 1.00, 0.40 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, { 0.31, 0.38, 0.50, 1.00 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, { 0.41, 0.48, 0.60, 1.00 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, { 0.51, 0.58, 0.70, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLines, { 0.61, 0.61, 0.61, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, { 1.00, 0.43, 0.35, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogram, { 0.90, 0.70, 0.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, { 1.00, 0.60, 0.00, 1.00 })
 end
--- Sets plugin colors to the "Strawberry" theme 
+
+-- Sets plugin colors to the "Strawberry" theme
 function setStrawberryColors()
-    imgui.PushStyleColor( imgui_col.WindowBg,               { 0.00, 0.00, 0.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 { 1.00, 0.81, 0.88, 0.30 } )
-    imgui.PushStyleColor( imgui_col.FrameBg,                { 0.28, 0.14, 0.24, 1.00 } )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         { 0.38, 0.24, 0.34, 1.00 } )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          { 0.43, 0.29, 0.39, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBg,                { 0.65, 0.41, 0.48, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          { 0.75, 0.51, 0.58, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       { 0.75, 0.51, 0.58, 0.50 } )
-    imgui.PushStyleColor( imgui_col.CheckMark,              { 1.00, 0.81, 0.88, 1.00 } )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             { 0.75, 0.56, 0.63, 1.00 } )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       { 0.80, 0.61, 0.68, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Button,                 { 0.50, 0.31, 0.38, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          { 0.60, 0.41, 0.48, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           { 0.70, 0.51, 0.58, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Tab,                    { 0.50, 0.31, 0.38, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TabHovered,             { 0.75, 0.51, 0.58, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TabActive,              { 0.75, 0.51, 0.58, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Header,                 { 1.00, 0.81, 0.88, 0.40 } )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          { 1.00, 0.81, 0.88, 0.50 } )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           { 1.00, 0.81, 0.88, 0.54 } )
-    imgui.PushStyleColor( imgui_col.Separator,              { 1.00, 0.81, 0.88, 0.30 } )
-    imgui.PushStyleColor( imgui_col.Text,                   { 1.00, 1.00, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         { 1.00, 0.81, 0.88, 0.40 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          { 0.50, 0.31, 0.38, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   { 0.60, 0.41, 0.48, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    { 0.70, 0.51, 0.58, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLines,              { 0.61, 0.61, 0.61, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       { 1.00, 0.43, 0.35, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          { 0.90, 0.70, 0.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   { 1.00, 0.60, 0.00, 1.00 } )
+    imgui.PushStyleColor(imgui_col.WindowBg, { 0.00, 0.00, 0.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, { 1.00, 0.81, 0.88, 0.30 })
+    imgui.PushStyleColor(imgui_col.FrameBg, { 0.28, 0.14, 0.24, 1.00 })
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, { 0.38, 0.24, 0.34, 1.00 })
+    imgui.PushStyleColor(imgui_col.FrameBgActive, { 0.43, 0.29, 0.39, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBg, { 0.65, 0.41, 0.48, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBgActive, { 0.75, 0.51, 0.58, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, { 0.75, 0.51, 0.58, 0.50 })
+    imgui.PushStyleColor(imgui_col.CheckMark, { 1.00, 0.81, 0.88, 1.00 })
+    imgui.PushStyleColor(imgui_col.SliderGrab, { 0.75, 0.56, 0.63, 1.00 })
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, { 0.80, 0.61, 0.68, 1.00 })
+    imgui.PushStyleColor(imgui_col.Button, { 0.50, 0.31, 0.38, 1.00 })
+    imgui.PushStyleColor(imgui_col.ButtonHovered, { 0.60, 0.41, 0.48, 1.00 })
+    imgui.PushStyleColor(imgui_col.ButtonActive, { 0.70, 0.51, 0.58, 1.00 })
+    imgui.PushStyleColor(imgui_col.Tab, { 0.50, 0.31, 0.38, 1.00 })
+    imgui.PushStyleColor(imgui_col.TabHovered, { 0.75, 0.51, 0.58, 1.00 })
+    imgui.PushStyleColor(imgui_col.TabActive, { 0.75, 0.51, 0.58, 1.00 })
+    imgui.PushStyleColor(imgui_col.Header, { 1.00, 0.81, 0.88, 0.40 })
+    imgui.PushStyleColor(imgui_col.HeaderHovered, { 1.00, 0.81, 0.88, 0.50 })
+    imgui.PushStyleColor(imgui_col.HeaderActive, { 1.00, 0.81, 0.88, 0.54 })
+    imgui.PushStyleColor(imgui_col.Separator, { 1.00, 0.81, 0.88, 0.30 })
+    imgui.PushStyleColor(imgui_col.Text, { 1.00, 1.00, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, { 1.00, 0.81, 0.88, 0.40 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, { 0.50, 0.31, 0.38, 1.00 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, { 0.60, 0.41, 0.48, 1.00 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, { 0.70, 0.51, 0.58, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLines, { 0.61, 0.61, 0.61, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, { 1.00, 0.43, 0.35, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogram, { 0.90, 0.70, 0.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, { 1.00, 0.60, 0.00, 1.00 })
 end
--- Sets plugin colors to the "Amethyst" theme 
+
+-- Sets plugin colors to the "Amethyst" theme
 function setAmethystColors()
-    imgui.PushStyleColor( imgui_col.WindowBg,               { 0.16, 0.00, 0.20, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 { 0.90, 0.00, 0.81, 0.30 } )
-    imgui.PushStyleColor( imgui_col.FrameBg,                { 0.40, 0.20, 0.40, 1.00 } )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         { 0.50, 0.30, 0.50, 1.00 } )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          { 0.55, 0.35, 0.55, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBg,                { 0.31, 0.11, 0.35, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          { 0.41, 0.21, 0.45, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       { 0.41, 0.21, 0.45, 0.50 } )
-    imgui.PushStyleColor( imgui_col.CheckMark,              { 1.00, 0.80, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             { 0.95, 0.75, 0.95, 1.00 } )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       { 1.00, 0.80, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Button,                 { 0.60, 0.40, 0.60, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          { 0.70, 0.50, 0.70, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           { 0.80, 0.60, 0.80, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Tab,                    { 0.50, 0.30, 0.50, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TabHovered,             { 0.70, 0.50, 0.70, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TabActive,              { 0.70, 0.50, 0.70, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Header,                 { 1.00, 0.80, 1.00, 0.40 } )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          { 1.00, 0.80, 1.00, 0.50 } )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           { 1.00, 0.80, 1.00, 0.54 } )
-    imgui.PushStyleColor( imgui_col.Separator,              { 1.00, 0.80, 1.00, 0.30 } )
-    imgui.PushStyleColor( imgui_col.Text,                   { 1.00, 1.00, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         { 1.00, 0.80, 1.00, 0.40 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          { 0.60, 0.40, 0.60, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   { 0.70, 0.50, 0.70, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    { 0.80, 0.60, 0.80, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLines,              { 1.00, 0.80, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       { 1.00, 0.70, 0.30, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          { 1.00, 0.80, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   { 1.00, 0.70, 0.30, 1.00 } )
+    imgui.PushStyleColor(imgui_col.WindowBg, { 0.16, 0.00, 0.20, 1.00 })
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, { 0.90, 0.00, 0.81, 0.30 })
+    imgui.PushStyleColor(imgui_col.FrameBg, { 0.40, 0.20, 0.40, 1.00 })
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, { 0.50, 0.30, 0.50, 1.00 })
+    imgui.PushStyleColor(imgui_col.FrameBgActive, { 0.55, 0.35, 0.55, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBg, { 0.31, 0.11, 0.35, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBgActive, { 0.41, 0.21, 0.45, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, { 0.41, 0.21, 0.45, 0.50 })
+    imgui.PushStyleColor(imgui_col.CheckMark, { 1.00, 0.80, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.SliderGrab, { 0.95, 0.75, 0.95, 1.00 })
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, { 1.00, 0.80, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.Button, { 0.60, 0.40, 0.60, 1.00 })
+    imgui.PushStyleColor(imgui_col.ButtonHovered, { 0.70, 0.50, 0.70, 1.00 })
+    imgui.PushStyleColor(imgui_col.ButtonActive, { 0.80, 0.60, 0.80, 1.00 })
+    imgui.PushStyleColor(imgui_col.Tab, { 0.50, 0.30, 0.50, 1.00 })
+    imgui.PushStyleColor(imgui_col.TabHovered, { 0.70, 0.50, 0.70, 1.00 })
+    imgui.PushStyleColor(imgui_col.TabActive, { 0.70, 0.50, 0.70, 1.00 })
+    imgui.PushStyleColor(imgui_col.Header, { 1.00, 0.80, 1.00, 0.40 })
+    imgui.PushStyleColor(imgui_col.HeaderHovered, { 1.00, 0.80, 1.00, 0.50 })
+    imgui.PushStyleColor(imgui_col.HeaderActive, { 1.00, 0.80, 1.00, 0.54 })
+    imgui.PushStyleColor(imgui_col.Separator, { 1.00, 0.80, 1.00, 0.30 })
+    imgui.PushStyleColor(imgui_col.Text, { 1.00, 1.00, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, { 1.00, 0.80, 1.00, 0.40 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, { 0.60, 0.40, 0.60, 1.00 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, { 0.70, 0.50, 0.70, 1.00 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, { 0.80, 0.60, 0.80, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLines, { 1.00, 0.80, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, { 1.00, 0.70, 0.30, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogram, { 1.00, 0.80, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, { 1.00, 0.70, 0.30, 1.00 })
 end
--- Sets plugin colors to the "Tree" theme 
+
+-- Sets plugin colors to the "Tree" theme
 function setTreeColors()
-    imgui.PushStyleColor( imgui_col.WindowBg,               { 0.20, 0.16, 0.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 { 0.81, 0.90, 0.00, 0.30 } )
-    imgui.PushStyleColor( imgui_col.FrameBg,                { 0.40, 0.40, 0.20, 1.00 } )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         { 0.50, 0.50, 0.30, 1.00 } )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          { 0.55, 0.55, 0.35, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBg,                { 0.35, 0.31, 0.11, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          { 0.45, 0.41, 0.21, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       { 0.45, 0.41, 0.21, 0.50 } )
-    imgui.PushStyleColor( imgui_col.CheckMark,              { 1.00, 1.00, 0.80, 1.00 } )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             { 0.95, 0.95, 0.75, 1.00 } )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       { 1.00, 1.00, 0.80, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Button,                 { 0.60, 0.60, 0.40, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          { 0.70, 0.70, 0.50, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           { 0.80, 0.80, 0.60, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Tab,                    { 0.50, 0.50, 0.30, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TabHovered,             { 0.70, 0.70, 0.50, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TabActive,              { 0.70, 0.70, 0.50, 1.00 } )
-    imgui.PushStyleColor( imgui_col.Header,                 { 1.00, 1.00, 0.80, 0.40 } )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          { 1.00, 1.00, 0.80, 0.50 } )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           { 1.00, 1.00, 0.80, 0.54 } )
-    imgui.PushStyleColor( imgui_col.Separator,              { 1.00, 1.00, 0.80, 0.30 } )
-    imgui.PushStyleColor( imgui_col.Text,                   { 1.00, 1.00, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         { 1.00, 1.00, 0.80, 0.40 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          { 0.60, 0.60, 0.40, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   { 0.70, 0.70, 0.50, 1.00 } )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    { 0.80, 0.80, 0.60, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLines,              { 1.00, 1.00, 0.80, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       { 0.30, 1.00, 0.70, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          { 1.00, 1.00, 0.80, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   { 0.30, 1.00, 0.70, 1.00 } )
+    imgui.PushStyleColor(imgui_col.WindowBg, { 0.20, 0.16, 0.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, { 0.81, 0.90, 0.00, 0.30 })
+    imgui.PushStyleColor(imgui_col.FrameBg, { 0.40, 0.40, 0.20, 1.00 })
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, { 0.50, 0.50, 0.30, 1.00 })
+    imgui.PushStyleColor(imgui_col.FrameBgActive, { 0.55, 0.55, 0.35, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBg, { 0.35, 0.31, 0.11, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBgActive, { 0.45, 0.41, 0.21, 1.00 })
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, { 0.45, 0.41, 0.21, 0.50 })
+    imgui.PushStyleColor(imgui_col.CheckMark, { 1.00, 1.00, 0.80, 1.00 })
+    imgui.PushStyleColor(imgui_col.SliderGrab, { 0.95, 0.95, 0.75, 1.00 })
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, { 1.00, 1.00, 0.80, 1.00 })
+    imgui.PushStyleColor(imgui_col.Button, { 0.60, 0.60, 0.40, 1.00 })
+    imgui.PushStyleColor(imgui_col.ButtonHovered, { 0.70, 0.70, 0.50, 1.00 })
+    imgui.PushStyleColor(imgui_col.ButtonActive, { 0.80, 0.80, 0.60, 1.00 })
+    imgui.PushStyleColor(imgui_col.Tab, { 0.50, 0.50, 0.30, 1.00 })
+    imgui.PushStyleColor(imgui_col.TabHovered, { 0.70, 0.70, 0.50, 1.00 })
+    imgui.PushStyleColor(imgui_col.TabActive, { 0.70, 0.70, 0.50, 1.00 })
+    imgui.PushStyleColor(imgui_col.Header, { 1.00, 1.00, 0.80, 0.40 })
+    imgui.PushStyleColor(imgui_col.HeaderHovered, { 1.00, 1.00, 0.80, 0.50 })
+    imgui.PushStyleColor(imgui_col.HeaderActive, { 1.00, 1.00, 0.80, 0.54 })
+    imgui.PushStyleColor(imgui_col.Separator, { 1.00, 1.00, 0.80, 0.30 })
+    imgui.PushStyleColor(imgui_col.Text, { 1.00, 1.00, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, { 1.00, 1.00, 0.80, 0.40 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, { 0.60, 0.60, 0.40, 1.00 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, { 0.70, 0.70, 0.50, 1.00 })
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, { 0.80, 0.80, 0.60, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLines, { 1.00, 1.00, 0.80, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, { 0.30, 1.00, 0.70, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogram, { 1.00, 1.00, 0.80, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, { 0.30, 1.00, 0.70, 1.00 })
 end
--- Sets plugin colors to the "Barbie" theme 
+
+-- Sets plugin colors to the "Barbie" theme
 function setBarbieColors()
-    local pink = {0.79, 0.31, 0.55, 1.00}
-    local white = {0.95, 0.85, 0.87, 1.00}
-    local blue = {0.37, 0.64, 0.84, 1.00}
-    local pinkTint = {1.00, 0.86, 0.86, 0.40}
-    imgui.PushStyleColor( imgui_col.WindowBg,               pink     )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 pinkTint )
-    imgui.PushStyleColor( imgui_col.FrameBg,                blue     )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         pinkTint )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          pinkTint )
-    imgui.PushStyleColor( imgui_col.TitleBg,                blue     )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          blue     )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       pink     )
-    imgui.PushStyleColor( imgui_col.CheckMark,              blue     )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             blue     )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       pinkTint )
-    imgui.PushStyleColor( imgui_col.Button,                 blue     )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          pinkTint )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           pinkTint )
-    imgui.PushStyleColor( imgui_col.Tab,                    blue     )
-    imgui.PushStyleColor( imgui_col.TabHovered,             pinkTint )
-    imgui.PushStyleColor( imgui_col.TabActive,              pinkTint )
-    imgui.PushStyleColor( imgui_col.Header,                 blue     )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          pinkTint )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           pinkTint )
-    imgui.PushStyleColor( imgui_col.Separator,              pinkTint )
-    imgui.PushStyleColor( imgui_col.Text,                   white    )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         pinkTint )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          pinkTint )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   white    )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    white    )
-    imgui.PushStyleColor( imgui_col.PlotLines,              pink     )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       pinkTint )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          pink     )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   pinkTint )
+    local pink = { 0.79, 0.31, 0.55, 1.00 }
+    local white = { 0.95, 0.85, 0.87, 1.00 }
+    local blue = { 0.37, 0.64, 0.84, 1.00 }
+    local pinkTint = { 1.00, 0.86, 0.86, 0.40 }
+    imgui.PushStyleColor(imgui_col.WindowBg, pink)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, pinkTint)
+    imgui.PushStyleColor(imgui_col.FrameBg, blue)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, pinkTint)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, pinkTint)
+    imgui.PushStyleColor(imgui_col.TitleBg, blue)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, blue)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, pink)
+    imgui.PushStyleColor(imgui_col.CheckMark, blue)
+    imgui.PushStyleColor(imgui_col.SliderGrab, blue)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, pinkTint)
+    imgui.PushStyleColor(imgui_col.Button, blue)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, pinkTint)
+    imgui.PushStyleColor(imgui_col.ButtonActive, pinkTint)
+    imgui.PushStyleColor(imgui_col.Tab, blue)
+    imgui.PushStyleColor(imgui_col.TabHovered, pinkTint)
+    imgui.PushStyleColor(imgui_col.TabActive, pinkTint)
+    imgui.PushStyleColor(imgui_col.Header, blue)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, pinkTint)
+    imgui.PushStyleColor(imgui_col.HeaderActive, pinkTint)
+    imgui.PushStyleColor(imgui_col.Separator, pinkTint)
+    imgui.PushStyleColor(imgui_col.Text, white)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, pinkTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, pinkTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, white)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, white)
+    imgui.PushStyleColor(imgui_col.PlotLines, pink)
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, pinkTint)
+    imgui.PushStyleColor(imgui_col.PlotHistogram, pink)
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, pinkTint)
 end
--- Sets plugin colors to the "Incognito" theme 
+
+-- Sets plugin colors to the "Incognito" theme
 function setIncognitoColors()
-    local black = {0.00, 0.00, 0.00, 1.00}
-    local white = {1.00, 1.00, 1.00, 1.00}
-    local grey = {0.20, 0.20, 0.20, 1.00}
-    local whiteTint = {1.00, 1.00, 1.00, 0.40}
-    local red = {1.00, 0.00, 0.00, 1.00}
-    imgui.PushStyleColor( imgui_col.WindowBg,               black     )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 whiteTint )
-    imgui.PushStyleColor( imgui_col.FrameBg,                grey      )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         whiteTint )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          whiteTint )
-    imgui.PushStyleColor( imgui_col.TitleBg,                grey      )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          grey      )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       black     )
-    imgui.PushStyleColor( imgui_col.CheckMark,              white     )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             grey      )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       whiteTint )
-    imgui.PushStyleColor( imgui_col.Button,                 grey      )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          whiteTint )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           whiteTint )
-    imgui.PushStyleColor( imgui_col.Tab,                    grey      )
-    imgui.PushStyleColor( imgui_col.TabHovered,             whiteTint )
-    imgui.PushStyleColor( imgui_col.TabActive,              whiteTint )
-    imgui.PushStyleColor( imgui_col.Header,                 grey      )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          whiteTint )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           whiteTint )
-    imgui.PushStyleColor( imgui_col.Separator,              whiteTint )
-    imgui.PushStyleColor( imgui_col.Text,                   white     )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         whiteTint )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          whiteTint )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   white     )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    white     )
-    imgui.PushStyleColor( imgui_col.PlotLines,              white     )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       red       )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          white     )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   red       )
+    local black = { 0.00, 0.00, 0.00, 1.00 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    local grey = { 0.20, 0.20, 0.20, 1.00 }
+    local whiteTint = { 1.00, 1.00, 1.00, 0.40 }
+    local red = { 1.00, 0.00, 0.00, 1.00 }
+    imgui.PushStyleColor(imgui_col.WindowBg, black)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, whiteTint)
+    imgui.PushStyleColor(imgui_col.FrameBg, grey)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.TitleBg, grey)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, grey)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, black)
+    imgui.PushStyleColor(imgui_col.CheckMark, white)
+    imgui.PushStyleColor(imgui_col.SliderGrab, grey)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Button, grey)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.ButtonActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Tab, grey)
+    imgui.PushStyleColor(imgui_col.TabHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.TabActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Header, grey)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.HeaderActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Separator, whiteTint)
+    imgui.PushStyleColor(imgui_col.Text, white)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, whiteTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, whiteTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, white)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, white)
+    imgui.PushStyleColor(imgui_col.PlotLines, white)
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, red)
+    imgui.PushStyleColor(imgui_col.PlotHistogram, white)
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, red)
 end
--- Sets plugin colors to the "Incognito + RGB" theme 
+
+-- Sets plugin colors to the "Incognito + RGB" theme
 -- Parameters
 --    rgbPeriod : length in seconds of one RGB color cycle [Int/Float]
 function setIncognitoRGBColors(rgbPeriod)
     local currentRGB = getCurrentRGBColors(rgbPeriod)
-    local rgbColor = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.8}
-    local black = {0.00, 0.00, 0.00, 1.00}
-    local white = {1.00, 1.00, 1.00, 1.00}
-    local grey = {0.20, 0.20, 0.20, 1.00}
-    local whiteTint = {1.00, 1.00, 1.00, 0.40}
-    imgui.PushStyleColor( imgui_col.WindowBg,               black     )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 rgbColor  )
-    imgui.PushStyleColor( imgui_col.FrameBg,                grey      )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         whiteTint )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          rgbColor  )
-    imgui.PushStyleColor( imgui_col.TitleBg,                grey      )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          grey      )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       black     )
-    imgui.PushStyleColor( imgui_col.CheckMark,              white     )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             grey      )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       rgbColor  )
-    imgui.PushStyleColor( imgui_col.Button,                 grey      )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          whiteTint )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           rgbColor  )
-    imgui.PushStyleColor( imgui_col.Tab,                    grey      )
-    imgui.PushStyleColor( imgui_col.TabHovered,             whiteTint )
-    imgui.PushStyleColor( imgui_col.TabActive,              rgbColor  )
-    imgui.PushStyleColor( imgui_col.Header,                 grey      )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          whiteTint )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           rgbColor  )
-    imgui.PushStyleColor( imgui_col.Separator,              rgbColor  )
-    imgui.PushStyleColor( imgui_col.Text,                   white     )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         rgbColor  )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          whiteTint )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   white     )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    rgbColor  )
-    imgui.PushStyleColor( imgui_col.PlotLines,              white     )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       rgbColor  )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          white     )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   rgbColor  )
+    local rgbColor = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.8 }
+    local black = { 0.00, 0.00, 0.00, 1.00 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    local grey = { 0.20, 0.20, 0.20, 1.00 }
+    local whiteTint = { 1.00, 1.00, 1.00, 0.40 }
+    imgui.PushStyleColor(imgui_col.WindowBg, black)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, rgbColor)
+    imgui.PushStyleColor(imgui_col.FrameBg, grey)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.TitleBg, grey)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, grey)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, black)
+    imgui.PushStyleColor(imgui_col.CheckMark, white)
+    imgui.PushStyleColor(imgui_col.SliderGrab, grey)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.Button, grey)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.ButtonActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.Tab, grey)
+    imgui.PushStyleColor(imgui_col.TabHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.TabActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.Header, grey)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.HeaderActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.Separator, rgbColor)
+    imgui.PushStyleColor(imgui_col.Text, white)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, rgbColor)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, whiteTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, white)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.PlotLines, white)
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, rgbColor)
+    imgui.PushStyleColor(imgui_col.PlotHistogram, white)
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, rgbColor)
 end
+
 -- Sets plugin colors to the "Tobi's Glass" theme
 function setTobiGlassColors()
-    local transparentBlack = {0.00, 0.00, 0.00, 0.70}
-    local transparentWhite = {0.30, 0.30, 0.30, 0.50}
-    local whiteTint = {1.00, 1.00, 1.00, 0.30}
-    local buttonColor = {0.14, 0.24, 0.28, 0.80}
-    local frameColor = {0.24, 0.34, 0.38, 1.00}
-    local white = {1.00, 1.00, 1.00, 1.00}  
-    imgui.PushStyleColor( imgui_col.WindowBg,               transparentBlack )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 frameColor       )
-    imgui.PushStyleColor( imgui_col.FrameBg,                buttonColor      )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         whiteTint        )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.TitleBg,                transparentBlack )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          transparentBlack )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       transparentBlack )
-    imgui.PushStyleColor( imgui_col.CheckMark,              white            )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             whiteTint        )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       transparentWhite )
-    imgui.PushStyleColor( imgui_col.Button,                 buttonColor      )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           whiteTint        )
-    imgui.PushStyleColor( imgui_col.Tab,                    transparentBlack )
-    imgui.PushStyleColor( imgui_col.TabHovered,             whiteTint        )
-    imgui.PushStyleColor( imgui_col.TabActive,              whiteTint        )
-    imgui.PushStyleColor( imgui_col.Header,                 transparentBlack )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           whiteTint        )
-    imgui.PushStyleColor( imgui_col.Separator,              whiteTint        )
-    imgui.PushStyleColor( imgui_col.Text,                   white            )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         whiteTint        )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   transparentWhite )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    transparentWhite )
-    imgui.PushStyleColor( imgui_col.PlotLines,              whiteTint        )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       transparentWhite )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   transparentWhite )
+    local transparentBlack = { 0.00, 0.00, 0.00, 0.70 }
+    local transparentWhite = { 0.30, 0.30, 0.30, 0.50 }
+    local whiteTint = { 1.00, 1.00, 1.00, 0.30 }
+    local buttonColor = { 0.14, 0.24, 0.28, 0.80 }
+    local frameColor = { 0.24, 0.34, 0.38, 1.00 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    imgui.PushStyleColor(imgui_col.WindowBg, transparentBlack)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, frameColor)
+    imgui.PushStyleColor(imgui_col.FrameBg, buttonColor)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.TitleBg, transparentBlack)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, transparentBlack)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, transparentBlack)
+    imgui.PushStyleColor(imgui_col.CheckMark, white)
+    imgui.PushStyleColor(imgui_col.SliderGrab, whiteTint)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, transparentWhite)
+    imgui.PushStyleColor(imgui_col.Button, buttonColor)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.ButtonActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Tab, transparentBlack)
+    imgui.PushStyleColor(imgui_col.TabHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.TabActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Header, transparentBlack)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.HeaderActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Separator, whiteTint)
+    imgui.PushStyleColor(imgui_col.Text, white)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, whiteTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, whiteTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, transparentWhite)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, transparentWhite)
+    imgui.PushStyleColor(imgui_col.PlotLines, whiteTint)
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, transparentWhite)
+    imgui.PushStyleColor(imgui_col.PlotHistogram, whiteTint)
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, transparentWhite)
 end
--- Sets plugin colors to the "Tobi's RGB Glass" theme 
+
+-- Sets plugin colors to the "Tobi's RGB Glass" theme
 -- Parameters
 --    rgbPeriod : length in seconds of one RGB color cycle [Int/Float]
 function setTobiRGBGlassColors(rgbPeriod)
     local currentRGB = getCurrentRGBColors(rgbPeriod)
-    local activeColor = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.8}
-    local colorTint = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.3}
-    local transparent = {0.00, 0.00, 0.00, 0.85}
-    local white = {1.00, 1.00, 1.00, 1.00}
-    imgui.PushStyleColor( imgui_col.WindowBg,               transparent )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 activeColor )
-    imgui.PushStyleColor( imgui_col.FrameBg,                transparent )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         colorTint   )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          colorTint   )
-    imgui.PushStyleColor( imgui_col.TitleBg,                transparent )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          transparent )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       transparent )
-    imgui.PushStyleColor( imgui_col.CheckMark,              activeColor )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             colorTint   )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       activeColor )
-    imgui.PushStyleColor( imgui_col.Button,                 transparent )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          colorTint   )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           colorTint   )
-    imgui.PushStyleColor( imgui_col.Tab,                    transparent )
-    imgui.PushStyleColor( imgui_col.TabHovered,             colorTint   )
-    imgui.PushStyleColor( imgui_col.TabActive,              colorTint   )
-    imgui.PushStyleColor( imgui_col.Header,                 transparent )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          colorTint   ) 
-    imgui.PushStyleColor( imgui_col.HeaderActive,           colorTint   )
-    imgui.PushStyleColor( imgui_col.Separator,              colorTint   )
-    imgui.PushStyleColor( imgui_col.Text,                   white       )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         colorTint   )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          colorTint   )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   activeColor )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    activeColor )
-    imgui.PushStyleColor( imgui_col.PlotLines,              activeColor )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       colorTint   )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          activeColor )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   colorTint   )
+    local activeColor = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.8 }
+    local colorTint = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.3 }
+    local transparent = { 0.00, 0.00, 0.00, 0.85 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    imgui.PushStyleColor(imgui_col.WindowBg, transparent)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, activeColor)
+    imgui.PushStyleColor(imgui_col.FrameBg, transparent)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, colorTint)
+    imgui.PushStyleColor(imgui_col.TitleBg, transparent)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, transparent)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, transparent)
+    imgui.PushStyleColor(imgui_col.CheckMark, activeColor)
+    imgui.PushStyleColor(imgui_col.SliderGrab, colorTint)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, activeColor)
+    imgui.PushStyleColor(imgui_col.Button, transparent)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.ButtonActive, colorTint)
+    imgui.PushStyleColor(imgui_col.Tab, transparent)
+    imgui.PushStyleColor(imgui_col.TabHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.TabActive, colorTint)
+    imgui.PushStyleColor(imgui_col.Header, transparent)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.HeaderActive, colorTint)
+    imgui.PushStyleColor(imgui_col.Separator, colorTint)
+    imgui.PushStyleColor(imgui_col.Text, white)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, colorTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, colorTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, activeColor)
+    imgui.PushStyleColor(imgui_col.PlotLines, activeColor)
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.PlotHistogram, activeColor)
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, colorTint)
 end
--- Sets plugin colors to the "Glass" theme 
+
+-- Sets plugin colors to the "Glass" theme
 function setGlassColors()
-    local transparentBlack = {0.00, 0.00, 0.00, 0.25}
-    local transparentWhite = {1.00, 1.00, 1.00, 0.70}
-    local whiteTint = {1.00, 1.00, 1.00, 0.30}
-    local white = {1.00, 1.00, 1.00, 1.00}
-    imgui.PushStyleColor( imgui_col.WindowBg,               transparentBlack )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 transparentWhite )
-    imgui.PushStyleColor( imgui_col.FrameBg,                transparentBlack )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         whiteTint        )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.TitleBg,                transparentBlack )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          transparentBlack )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       transparentBlack )
-    imgui.PushStyleColor( imgui_col.CheckMark,              transparentWhite )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             whiteTint        )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       transparentWhite )
-    imgui.PushStyleColor( imgui_col.Button,                 transparentBlack )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           whiteTint        )
-    imgui.PushStyleColor( imgui_col.Tab,                    transparentBlack )
-    imgui.PushStyleColor( imgui_col.TabHovered,             whiteTint        )
-    imgui.PushStyleColor( imgui_col.TabActive,              whiteTint        )
-    imgui.PushStyleColor( imgui_col.Header,                 transparentBlack )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           whiteTint        )
-    imgui.PushStyleColor( imgui_col.Separator,              whiteTint        )
-    imgui.PushStyleColor( imgui_col.Text,                   white            )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         whiteTint        )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   transparentWhite )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    transparentWhite )
-    imgui.PushStyleColor( imgui_col.PlotLines,              whiteTint        )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       transparentWhite )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          whiteTint        )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   transparentWhite )
+    local transparentBlack = { 0.00, 0.00, 0.00, 0.25 }
+    local transparentWhite = { 1.00, 1.00, 1.00, 0.70 }
+    local whiteTint = { 1.00, 1.00, 1.00, 0.30 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    imgui.PushStyleColor(imgui_col.WindowBg, transparentBlack)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, transparentWhite)
+    imgui.PushStyleColor(imgui_col.FrameBg, transparentBlack)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.TitleBg, transparentBlack)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, transparentBlack)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, transparentBlack)
+    imgui.PushStyleColor(imgui_col.CheckMark, transparentWhite)
+    imgui.PushStyleColor(imgui_col.SliderGrab, whiteTint)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, transparentWhite)
+    imgui.PushStyleColor(imgui_col.Button, transparentBlack)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.ButtonActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Tab, transparentBlack)
+    imgui.PushStyleColor(imgui_col.TabHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.TabActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Header, transparentBlack)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, whiteTint)
+    imgui.PushStyleColor(imgui_col.HeaderActive, whiteTint)
+    imgui.PushStyleColor(imgui_col.Separator, whiteTint)
+    imgui.PushStyleColor(imgui_col.Text, white)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, whiteTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, whiteTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, transparentWhite)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, transparentWhite)
+    imgui.PushStyleColor(imgui_col.PlotLines, whiteTint)
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, transparentWhite)
+    imgui.PushStyleColor(imgui_col.PlotHistogram, whiteTint)
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, transparentWhite)
 end
--- Sets plugin colors to the "Glass + RGB" theme 
+
+-- Sets plugin colors to the "Glass + RGB" theme
 -- Parameters
 --    rgbPeriod : length in seconds of one RGB color cycle [Int/Float]
 function setGlassRGBColors(rgbPeriod)
     local currentRGB = getCurrentRGBColors(rgbPeriod)
-    local activeColor = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.8}
-    local colorTint = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.3}
-    local transparent = {0.00, 0.00, 0.00, 0.25}
-    local white = {1.00, 1.00, 1.00, 1.00}
-    imgui.PushStyleColor( imgui_col.WindowBg,               transparent )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 activeColor )
-    imgui.PushStyleColor( imgui_col.FrameBg,                transparent )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         colorTint   )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          colorTint   )
-    imgui.PushStyleColor( imgui_col.TitleBg,                transparent )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          transparent )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       transparent )
-    imgui.PushStyleColor( imgui_col.CheckMark,              activeColor )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             colorTint   )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       activeColor )
-    imgui.PushStyleColor( imgui_col.Button,                 transparent )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          colorTint   )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           colorTint   )
-    imgui.PushStyleColor( imgui_col.Tab,                    transparent )
-    imgui.PushStyleColor( imgui_col.TabHovered,             colorTint   )
-    imgui.PushStyleColor( imgui_col.TabActive,              colorTint   )
-    imgui.PushStyleColor( imgui_col.Header,                 transparent )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          colorTint   ) 
-    imgui.PushStyleColor( imgui_col.HeaderActive,           colorTint   )
-    imgui.PushStyleColor( imgui_col.Separator,              colorTint   )
-    imgui.PushStyleColor( imgui_col.Text,                   white       )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         colorTint   )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          colorTint   )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   activeColor )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    activeColor )
-    imgui.PushStyleColor( imgui_col.PlotLines,              activeColor )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       colorTint   )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          activeColor )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   colorTint   )
+    local activeColor = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.8 }
+    local colorTint = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.3 }
+    local transparent = { 0.00, 0.00, 0.00, 0.25 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    imgui.PushStyleColor(imgui_col.WindowBg, transparent)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, activeColor)
+    imgui.PushStyleColor(imgui_col.FrameBg, transparent)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, colorTint)
+    imgui.PushStyleColor(imgui_col.TitleBg, transparent)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, transparent)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, transparent)
+    imgui.PushStyleColor(imgui_col.CheckMark, activeColor)
+    imgui.PushStyleColor(imgui_col.SliderGrab, colorTint)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, activeColor)
+    imgui.PushStyleColor(imgui_col.Button, transparent)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.ButtonActive, colorTint)
+    imgui.PushStyleColor(imgui_col.Tab, transparent)
+    imgui.PushStyleColor(imgui_col.TabHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.TabActive, colorTint)
+    imgui.PushStyleColor(imgui_col.Header, transparent)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.HeaderActive, colorTint)
+    imgui.PushStyleColor(imgui_col.Separator, colorTint)
+    imgui.PushStyleColor(imgui_col.Text, white)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, colorTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, colorTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, activeColor)
+    imgui.PushStyleColor(imgui_col.PlotLines, activeColor)
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, colorTint)
+    imgui.PushStyleColor(imgui_col.PlotHistogram, activeColor)
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, colorTint)
 end
--- Sets plugin colors to the "RGB Gamer Mode" theme 
+
+-- Sets plugin colors to the "RGB Gamer Mode" theme
 -- Parameters
 --    rgbPeriod : length in seconds of one RGB color cycle [Int/Float]
 function setRGBGamerColors(rgbPeriod)
     local currentRGB = getCurrentRGBColors(rgbPeriod)
-    local activeColor = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.8}
-    local inactiveColor = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.5}
-    local white = {1.00, 1.00, 1.00, 1.00}
-    local clearWhite = {1.00, 1.00, 1.00, 0.40}
-    local black = {0.00, 0.00, 0.00, 1.00}
-    imgui.PushStyleColor( imgui_col.WindowBg,               black         )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.08, 0.08, 0.08, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 inactiveColor )
-    imgui.PushStyleColor( imgui_col.FrameBg,                inactiveColor )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         activeColor   )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          activeColor   )
-    imgui.PushStyleColor( imgui_col.TitleBg,                inactiveColor )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          activeColor   )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       inactiveColor )
-    imgui.PushStyleColor( imgui_col.CheckMark,              white         )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             activeColor   )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       white         )
-    imgui.PushStyleColor( imgui_col.Button,                 inactiveColor )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          activeColor   )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           activeColor   )
-    imgui.PushStyleColor( imgui_col.Tab,                    inactiveColor )
-    imgui.PushStyleColor( imgui_col.TabHovered,             activeColor   )
-    imgui.PushStyleColor( imgui_col.TabActive,              activeColor   )
-    imgui.PushStyleColor( imgui_col.Header,                 inactiveColor )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          inactiveColor )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           activeColor   )
-    imgui.PushStyleColor( imgui_col.Separator,              inactiveColor )
-    imgui.PushStyleColor( imgui_col.Text,                   white         )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         clearWhite    )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          inactiveColor )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   activeColor   )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    activeColor   )
-    imgui.PushStyleColor( imgui_col.PlotLines,              { 0.61, 0.61, 0.61, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       { 1.00, 0.43, 0.35, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          { 0.90, 0.70, 0.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   { 1.00, 0.60, 0.00, 1.00 } )
+    local activeColor = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.8 }
+    local inactiveColor = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.5 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    local clearWhite = { 1.00, 1.00, 1.00, 0.40 }
+    local black = { 0.00, 0.00, 0.00, 1.00 }
+    imgui.PushStyleColor(imgui_col.WindowBg, black)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.08, 0.08, 0.08, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, inactiveColor)
+    imgui.PushStyleColor(imgui_col.FrameBg, inactiveColor)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, activeColor)
+    imgui.PushStyleColor(imgui_col.TitleBg, inactiveColor)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, activeColor)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, inactiveColor)
+    imgui.PushStyleColor(imgui_col.CheckMark, white)
+    imgui.PushStyleColor(imgui_col.SliderGrab, activeColor)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, white)
+    imgui.PushStyleColor(imgui_col.Button, inactiveColor)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.ButtonActive, activeColor)
+    imgui.PushStyleColor(imgui_col.Tab, inactiveColor)
+    imgui.PushStyleColor(imgui_col.TabHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.TabActive, activeColor)
+    imgui.PushStyleColor(imgui_col.Header, inactiveColor)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, inactiveColor)
+    imgui.PushStyleColor(imgui_col.HeaderActive, activeColor)
+    imgui.PushStyleColor(imgui_col.Separator, inactiveColor)
+    imgui.PushStyleColor(imgui_col.Text, white)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, clearWhite)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, inactiveColor)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, activeColor)
+    imgui.PushStyleColor(imgui_col.PlotLines, { 0.61, 0.61, 0.61, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, { 1.00, 0.43, 0.35, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogram, { 0.90, 0.70, 0.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, { 1.00, 0.60, 0.00, 1.00 })
 end
--- Sets plugin colors to the "edom remag BGR" theme 
+
+-- Sets plugin colors to the "edom remag BGR" theme
 -- Parameters
 --    rgbPeriod : length in seconds of one RGB color cycle [Int/Float]
 function setInvertedRGBGamerColors(rgbPeriod)
     local currentRGB = getCurrentRGBColors(rgbPeriod)
-    local activeColor = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.8}
-    local inactiveColor = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.5}
-    local white = {1.00, 1.00, 1.00, 1.00}
-    local clearBlack = {0.00, 0.00, 0.00, 0.40}
-    local black = {0.00, 0.00, 0.00, 1.00}
-    imgui.PushStyleColor( imgui_col.WindowBg,               white         )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.92, 0.92, 0.92, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 inactiveColor )
-    imgui.PushStyleColor( imgui_col.FrameBg,                inactiveColor )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         activeColor   )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          activeColor   )
-    imgui.PushStyleColor( imgui_col.TitleBg,                inactiveColor )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          activeColor   )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       inactiveColor )
-    imgui.PushStyleColor( imgui_col.CheckMark,              black         )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             activeColor   )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       black         )
-    imgui.PushStyleColor( imgui_col.Button,                 inactiveColor )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          activeColor   )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           activeColor   )
-    imgui.PushStyleColor( imgui_col.Tab,                    inactiveColor )
-    imgui.PushStyleColor( imgui_col.TabHovered,             activeColor   )
-    imgui.PushStyleColor( imgui_col.TabActive,              activeColor   )
-    imgui.PushStyleColor( imgui_col.Header,                 inactiveColor )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          inactiveColor )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           activeColor   )
-    imgui.PushStyleColor( imgui_col.Separator,              inactiveColor )
-    imgui.PushStyleColor( imgui_col.Text,                   black         )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         clearBlack    )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          inactiveColor )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   activeColor   )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    activeColor   )
-    imgui.PushStyleColor( imgui_col.PlotLines,              { 0.39, 0.39, 0.39, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       { 0.00, 0.57, 0.65, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          { 0.10, 0.30, 1.00, 1.00 } )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   { 0.00, 0.40, 1.00, 1.00 } )
+    local activeColor = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.8 }
+    local inactiveColor = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.5 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    local clearBlack = { 0.00, 0.00, 0.00, 0.40 }
+    local black = { 0.00, 0.00, 0.00, 1.00 }
+    imgui.PushStyleColor(imgui_col.WindowBg, white)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.92, 0.92, 0.92, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, inactiveColor)
+    imgui.PushStyleColor(imgui_col.FrameBg, inactiveColor)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, activeColor)
+    imgui.PushStyleColor(imgui_col.TitleBg, inactiveColor)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, activeColor)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, inactiveColor)
+    imgui.PushStyleColor(imgui_col.CheckMark, black)
+    imgui.PushStyleColor(imgui_col.SliderGrab, activeColor)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, black)
+    imgui.PushStyleColor(imgui_col.Button, inactiveColor)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.ButtonActive, activeColor)
+    imgui.PushStyleColor(imgui_col.Tab, inactiveColor)
+    imgui.PushStyleColor(imgui_col.TabHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.TabActive, activeColor)
+    imgui.PushStyleColor(imgui_col.Header, inactiveColor)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, inactiveColor)
+    imgui.PushStyleColor(imgui_col.HeaderActive, activeColor)
+    imgui.PushStyleColor(imgui_col.Separator, inactiveColor)
+    imgui.PushStyleColor(imgui_col.Text, black)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, clearBlack)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, inactiveColor)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, activeColor)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, activeColor)
+    imgui.PushStyleColor(imgui_col.PlotLines, { 0.39, 0.39, 0.39, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, { 0.00, 0.57, 0.65, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogram, { 0.10, 0.30, 1.00, 1.00 })
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, { 0.00, 0.40, 1.00, 1.00 })
 end
+
 -- Sets plugin colors to the "BGR + otingocnI" theme
 -- Parameters
 --    rgbPeriod : length in seconds of one RGB color cycle [Int/Float]
 function setInvertedIncognitoRGBColors(rgbPeriod)
     local currentRGB = getCurrentRGBColors(rgbPeriod)
-    local rgbColor = {currentRGB.red, currentRGB.green, currentRGB.blue, 0.8}
-    local black = {0.00, 0.00, 0.00, 1.00}
-    local white = {1.00, 1.00, 1.00, 1.00}
-    local grey = {0.80, 0.80, 0.80, 1.00}
-    local blackTint = {0.00, 0.00, 0.00, 0.40}
-    imgui.PushStyleColor( imgui_col.WindowBg,               white     )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.92, 0.92, 0.92, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 rgbColor  )
-    imgui.PushStyleColor( imgui_col.FrameBg,                grey      )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         blackTint )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          rgbColor  )
-    imgui.PushStyleColor( imgui_col.TitleBg,                grey      )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          grey      )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       white     )
-    imgui.PushStyleColor( imgui_col.CheckMark,              black     )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             grey      )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       rgbColor  )
-    imgui.PushStyleColor( imgui_col.Button,                 grey      )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          blackTint )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           rgbColor  )
-    imgui.PushStyleColor( imgui_col.Tab,                    grey      )
-    imgui.PushStyleColor( imgui_col.TabHovered,             blackTint )
-    imgui.PushStyleColor( imgui_col.TabActive,              rgbColor  )
-    imgui.PushStyleColor( imgui_col.Header,                 grey      )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          blackTint )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           rgbColor  )
-    imgui.PushStyleColor( imgui_col.Separator,              rgbColor  )
-    imgui.PushStyleColor( imgui_col.Text,                   black     )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         rgbColor  )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          blackTint )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   black     )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    rgbColor  )
-    imgui.PushStyleColor( imgui_col.PlotLines,              black     )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       rgbColor  )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          black     )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   rgbColor  )
+    local rgbColor = { currentRGB.red, currentRGB.green, currentRGB.blue, 0.8 }
+    local black = { 0.00, 0.00, 0.00, 1.00 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    local grey = { 0.80, 0.80, 0.80, 1.00 }
+    local blackTint = { 0.00, 0.00, 0.00, 0.40 }
+    imgui.PushStyleColor(imgui_col.WindowBg, white)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.92, 0.92, 0.92, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, rgbColor)
+    imgui.PushStyleColor(imgui_col.FrameBg, grey)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, blackTint)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.TitleBg, grey)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, grey)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, white)
+    imgui.PushStyleColor(imgui_col.CheckMark, black)
+    imgui.PushStyleColor(imgui_col.SliderGrab, grey)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.Button, grey)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, blackTint)
+    imgui.PushStyleColor(imgui_col.ButtonActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.Tab, grey)
+    imgui.PushStyleColor(imgui_col.TabHovered, blackTint)
+    imgui.PushStyleColor(imgui_col.TabActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.Header, grey)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, blackTint)
+    imgui.PushStyleColor(imgui_col.HeaderActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.Separator, rgbColor)
+    imgui.PushStyleColor(imgui_col.Text, black)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, rgbColor)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, blackTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, black)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, rgbColor)
+    imgui.PushStyleColor(imgui_col.PlotLines, black)
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, rgbColor)
+    imgui.PushStyleColor(imgui_col.PlotHistogram, black)
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, rgbColor)
 end
+
 -- Sets plugin colors to the "otingocnI" theme
 function setInvertedIncognitoColors()
-    local black = {0.00, 0.00, 0.00, 1.00}
-    local white = {1.00, 1.00, 1.00, 1.00}
-    local grey = {0.80, 0.80, 0.80, 1.00}
-    local blackTint = {0.00, 0.00, 0.00, 0.40}
-    local notRed = {0.00, 1.00, 1.00, 1.00}
-    imgui.PushStyleColor( imgui_col.WindowBg,               white     )
-    imgui.PushStyleColor( imgui_col.PopupBg,                { 0.92, 0.92, 0.92, 0.94 } )
-    imgui.PushStyleColor( imgui_col.Border,                 blackTint )
-    imgui.PushStyleColor( imgui_col.FrameBg,                grey      )
-    imgui.PushStyleColor( imgui_col.FrameBgHovered,         blackTint )
-    imgui.PushStyleColor( imgui_col.FrameBgActive,          blackTint )
-    imgui.PushStyleColor( imgui_col.TitleBg,                grey      )
-    imgui.PushStyleColor( imgui_col.TitleBgActive,          grey      )
-    imgui.PushStyleColor( imgui_col.TitleBgCollapsed,       white     )
-    imgui.PushStyleColor( imgui_col.CheckMark,              black     )
-    imgui.PushStyleColor( imgui_col.SliderGrab,             grey      )
-    imgui.PushStyleColor( imgui_col.SliderGrabActive,       blackTint )
-    imgui.PushStyleColor( imgui_col.Button,                 grey      )
-    imgui.PushStyleColor( imgui_col.ButtonHovered,          blackTint )
-    imgui.PushStyleColor( imgui_col.ButtonActive,           blackTint )
-    imgui.PushStyleColor( imgui_col.Tab,                    grey      )
-    imgui.PushStyleColor( imgui_col.TabHovered,             blackTint )
-    imgui.PushStyleColor( imgui_col.TabActive,              blackTint )
-    imgui.PushStyleColor( imgui_col.Header,                 grey      )
-    imgui.PushStyleColor( imgui_col.HeaderHovered,          blackTint )
-    imgui.PushStyleColor( imgui_col.HeaderActive,           blackTint )
-    imgui.PushStyleColor( imgui_col.Separator,              blackTint )
-    imgui.PushStyleColor( imgui_col.Text,                   black     )
-    imgui.PushStyleColor( imgui_col.TextSelectedBg,         blackTint )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrab,          blackTint )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabHovered,   black     )
-    imgui.PushStyleColor( imgui_col.ScrollbarGrabActive,    black     )
-    imgui.PushStyleColor( imgui_col.PlotLines,              black     )
-    imgui.PushStyleColor( imgui_col.PlotLinesHovered,       notRed    )
-    imgui.PushStyleColor( imgui_col.PlotHistogram,          black     )
-    imgui.PushStyleColor( imgui_col.PlotHistogramHovered,   notRed    )
+    local black = { 0.00, 0.00, 0.00, 1.00 }
+    local white = { 1.00, 1.00, 1.00, 1.00 }
+    local grey = { 0.80, 0.80, 0.80, 1.00 }
+    local blackTint = { 0.00, 0.00, 0.00, 0.40 }
+    local notRed = { 0.00, 1.00, 1.00, 1.00 }
+    imgui.PushStyleColor(imgui_col.WindowBg, white)
+    imgui.PushStyleColor(imgui_col.PopupBg, { 0.92, 0.92, 0.92, 0.94 })
+    imgui.PushStyleColor(imgui_col.Border, blackTint)
+    imgui.PushStyleColor(imgui_col.FrameBg, grey)
+    imgui.PushStyleColor(imgui_col.FrameBgHovered, blackTint)
+    imgui.PushStyleColor(imgui_col.FrameBgActive, blackTint)
+    imgui.PushStyleColor(imgui_col.TitleBg, grey)
+    imgui.PushStyleColor(imgui_col.TitleBgActive, grey)
+    imgui.PushStyleColor(imgui_col.TitleBgCollapsed, white)
+    imgui.PushStyleColor(imgui_col.CheckMark, black)
+    imgui.PushStyleColor(imgui_col.SliderGrab, grey)
+    imgui.PushStyleColor(imgui_col.SliderGrabActive, blackTint)
+    imgui.PushStyleColor(imgui_col.Button, grey)
+    imgui.PushStyleColor(imgui_col.ButtonHovered, blackTint)
+    imgui.PushStyleColor(imgui_col.ButtonActive, blackTint)
+    imgui.PushStyleColor(imgui_col.Tab, grey)
+    imgui.PushStyleColor(imgui_col.TabHovered, blackTint)
+    imgui.PushStyleColor(imgui_col.TabActive, blackTint)
+    imgui.PushStyleColor(imgui_col.Header, grey)
+    imgui.PushStyleColor(imgui_col.HeaderHovered, blackTint)
+    imgui.PushStyleColor(imgui_col.HeaderActive, blackTint)
+    imgui.PushStyleColor(imgui_col.Separator, blackTint)
+    imgui.PushStyleColor(imgui_col.Text, black)
+    imgui.PushStyleColor(imgui_col.TextSelectedBg, blackTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrab, blackTint)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabHovered, black)
+    imgui.PushStyleColor(imgui_col.ScrollbarGrabActive, black)
+    imgui.PushStyleColor(imgui_col.PlotLines, black)
+    imgui.PushStyleColor(imgui_col.PlotLinesHovered, notRed)
+    imgui.PushStyleColor(imgui_col.PlotHistogram, black)
+    imgui.PushStyleColor(imgui_col.PlotHistogramHovered, notRed)
 end
+
 -- Returns the RGB colors based on the current time [Table]
 -- Parameters
 --    rgbPeriod : length in seconds for one complete RGB cycle (i.e. period) [Int/Float]
@@ -2337,8 +2466,8 @@ function getCurrentRGBColors(rgbPeriod)
     local currentStageNumber = math.floor(stagesElapsed)
     local percentIntoStage = stagesElapsed - currentStageNumber
     percentIntoStage = clampToInterval(percentIntoStage, 0, 1)
-    
-    local red = 0 
+
+    local red = 0
     local green = 0
     local blue = 0
     if currentStageNumber == 0 then
@@ -2360,7 +2489,7 @@ function getCurrentRGBColors(rgbPeriod)
         blue = percentIntoStage
         green = 1
     end
-    return {red = red, green = green, blue = blue}
+    return { red = red, green = green, blue = blue }
 end
 
 ---------------------------------------------------------------------------------------------------
@@ -2369,20 +2498,22 @@ end
 
 -- Adds vertical blank space/padding on the GUI
 function addPadding()
-    imgui.Dummy({0, 0})
+    imgui.Dummy({ 0, 0 })
 end
+
 -- Creates a horizontal line separator on the GUI
 function addSeparator()
     addPadding()
     imgui.Separator()
     addPadding()
 end
+
 -- Creates a tooltip box when the last (most recently created) GUI item is hovered over
 -- Parameters
 --    text : text to appear in the tooltip box [String]
 function tooltip(text)
     if not imgui.IsItemHovered() then return end
-    
+
     setTooltipActive()
     imgui.BeginTooltip()
     local tooltipWidth = 20 * imgui.GetFontSize()
@@ -2391,6 +2522,7 @@ function tooltip(text)
     imgui.PopTextWrapPos()
     imgui.EndTooltip()
 end
+
 -- Creates an inline, grayed-out '(?)' symbol that shows a tooltip box when hovered over
 -- Parameters
 --    text : text to show in the tooltip box [String]
@@ -2399,6 +2531,7 @@ function helpMarker(text)
     imgui.TextDisabled("(?)")
     tooltip(text)
 end
+
 -- Creates a copy-pastable text box
 -- Parameters
 --    text    : text to put above the box [String]
@@ -2412,12 +2545,13 @@ function copiableBox(text, label, content)
     imgui.PopItemWidth()
     addPadding()
 end
+
 -- Creates a copy-pastable link box
 -- Parameters
 --    text : text to describe the link [String]
 --    url  : link [String]
 function linkBox(text, url)
-    copiableBox(text, "##"..url, url)
+    copiableBox(text, "##" .. url, url)
 end
 
 ---------------------------------------------------------------------------------------------------
@@ -2428,29 +2562,31 @@ end
 -- Parameters
 --    listName  : name of the variable list [String]
 --    variables : list of variables [Table]
-function getVariables(listName, variables) 
+function getVariables(listName, variables)
     for key, value in pairs(variables) do
-        variables[key] = state.GetValue(listName..key) or value
+        variables[key] = state.GetValue(listName .. key) or value
     end
 end
+
 -- Returns whether any variables from a list of variables has changed from the state [Boolean]
 -- Parameters
 --    listName  : name of the variable list [String]
 --    variables : list of variables [Table]
 function checkVariablesChanged(listName, variables)
     for key, newValue in pairs(variables) do
-        local oldValue = state.GetValue(listName..key)
+        local oldValue = state.GetValue(listName .. key)
         if oldValue ~= newValue then return true end
     end
     return false
 end
+
 -- Saves a list of variables to the state
 -- Parameters
 --    listName  : name of the variable list [String]
 --    variables : list of variables [Table]
 function saveVariables(listName, variables)
     for key, value in pairs(variables) do
-        state.SetValue(listName..key, value)
+        state.SetValue(listName .. key, value)
     end
 end
 
@@ -2464,10 +2600,11 @@ end
 --    g : green value [Int]
 --    b : blue value [Int]
 --    a : alpha value [Int]
-function rgbaToUint(r, g, b, a) return a*16^6 + b*16^4 + g*16^2 + r end
+function rgbaToUint(r, g, b, a) return a * 16 ^ 6 + b * 16 ^ 4 + g * 16 ^ 2 + r end
+
 -- Draws an animation of a chinchilla when the plugin first starts up
 function drawChinchillaStartupAnimation()
-    local pluginTime = imgui.GetTime()-- % n -- you can make it appear every n seconds
+    local pluginTime = imgui.GetTime() -- % n -- you can make it appear every n seconds
     local animationFPS = 24
     local totalFrames = 16
     local animationDuration = (totalFrames + 1) / animationFPS
@@ -2489,6 +2626,7 @@ function drawChinchillaStartupAnimation()
         end
     end
 end
+
 -- Draws frame 1 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2500,6 +2638,7 @@ function drawChinchillaAnimationFrame1(o, chinchillaSize, chinchillaXPosition, c
                                        windowHeight)
     return -- empty frame lol
 end
+
 -- Draws frame 2 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2509,9 +2648,10 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame2(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                        windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight }
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 3 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2521,10 +2661,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame3(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                        windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 220}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 220 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 1)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 4 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2534,10 +2675,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame4(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                        windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 264}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 264 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 2)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 5 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2547,10 +2689,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame5(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                        windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 284}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 284 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 3)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 6 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2560,10 +2703,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame6(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                        windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 294}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 294 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 5)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 7 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2573,10 +2717,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame7(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                        windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 304}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 304 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 4)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 8 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2586,10 +2731,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame8(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                        windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 308}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 308 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 3)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 9 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2599,10 +2745,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame9(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                        windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 312}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 312 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 1)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 10 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2612,10 +2759,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame10(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                         windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 308}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 308 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 2)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 11 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2625,10 +2773,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame11(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                         windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 304}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 304 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 3)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 12 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2638,10 +2787,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame12(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                         windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 294}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 294 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 5)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 13 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2651,10 +2801,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame13(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                         windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 284}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 284 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 4)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 14 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2664,10 +2815,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame14(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                         windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 264}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 264 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 3)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 15 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2677,10 +2829,11 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame15(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                         windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight - 220}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight - 220 }
     drawChinchillaTail(o, bodyCenterCoords, chinchillaColors, 1)
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Draws frame 16 of the chinchilla startup animation
 -- Parameters
 --    o                   : [imgui overlay drawlist]
@@ -2690,9 +2843,10 @@ end
 --    windowHeight        : height of the quaver window [Int]
 function drawChinchillaAnimationFrame16(o, chinchillaSize, chinchillaXPosition, chinchillaColors,
                                         windowHeight)
-    local bodyCenterCoords = {chinchillaXPosition, windowHeight}
+    local bodyCenterCoords = { chinchillaXPosition, windowHeight }
     drawMainChinchilla(o, bodyCenterCoords, chinchillaSize, chinchillaColors)
 end
+
 -- Returns a list of animation frames for the startup animation [Table]
 function getChinchillaColorsList()
     local chinchillaColors = {}
@@ -2704,6 +2858,7 @@ function getChinchillaColorsList()
     chinchillaColors[6] = rgbaToUint(198, 196, 200, 255)
     return chinchillaColors
 end
+
 -- Returns a list of animation frames for the startup animation [Table]
 function getStartupFrameFunctionsList()
     local animationFrames = {}
@@ -2725,14 +2880,16 @@ function getStartupFrameFunctionsList()
     animationFrames[16] = drawChinchillaAnimationFrame16
     return animationFrames
 end
+
 -- Returns coordinates relative to a given coordinate [Table]
 -- Parameters
 --    point   : (x, y) coordinates [Table]
 --    xChange : change in x coordinate [Int]
 --    yChange : change in y coordinate [Int]
 function relativeCoords(point, xChange, yChange)
-    return {point[1] + xChange, point[2] + yChange}
+    return { point[1] + xChange, point[2] + yChange }
 end
+
 -- Draws the static, main parts of the chinchilla
 -- Parameters
 --    o                : [imgui overlay drawlist]
@@ -2815,6 +2972,7 @@ function drawMainChinchilla(o, bodyCenterCoords, size, chinchillaColors)
     o.AddCircleFilled(toeP5, toeCircleRadius, toeColor, toeSegments)
     o.AddCircleFilled(toeP6, toeCircleRadius, toeColor, toeSegments)
 end
+
 -- Draws a pill shape between two points
 -- Parameters
 --    o              : [imgui overlay drawlist]
@@ -2828,7 +2986,7 @@ function drawPill(o, p1, p2, radius, color, circleSegments)
     local p1ToP2Length = vectorLength(p1ToP2)
     local p1ToP2ClockwiseRotated = vectorRotated90DegreesClockwise(p1ToP2)
     local radiusNormalizingFactor = radius / p1ToP2Length
-    
+
     local v1 = vectorScaled(p1ToP2ClockwiseRotated, radiusNormalizingFactor)
     local v2 = vectorRotated180Degrees(v1)
     local p3 = addVectors(p1, v1)
@@ -2839,18 +2997,21 @@ function drawPill(o, p1, p2, radius, color, circleSegments)
     o.AddQuadFilled(p3, p4, p6, p5, color)
     o.AddCircleFilled(p2, radius, color, circleSegments)
 end
+
 -- Returns a 2D vector/point rotated 90 degrees clockwise [Table]
 -- Parameters
 --    vector : a 2 dimensional vector [Table]
 function vectorRotated90DegreesClockwise(vector)
-    return {vector[2], -vector[1]}
+    return { vector[2], -vector[1] }
 end
+
 -- Rotates a 2D vector/point rotated 180 degrees [Table]
 -- Parameters
 --    vector : a 2 dimensional vector [Table]
 function vectorRotated180Degrees(vector)
-    return {-vector[1], -vector[2]}
+    return { -vector[1], -vector[2] }
 end
+
 -- Returns the length of a vector [Int]
 -- Parameters
 --    vector : vector of any dimensions [Table]
@@ -2861,6 +3022,7 @@ function vectorLength(vector)
     end
     return math.sqrt(sumOfSquareLengths)
 end
+
 -- Returns a scaled vector [Table]
 -- Parameters
 --    vector        : vector to scale [Table]
@@ -2872,6 +3034,7 @@ function vectorScaled(vector, scalingFactor)
     end
     return newVector
 end
+
 -- Returns the result of two vectors of same dimension being added [Table]
 -- Parameters
 --    vector1 : first vector [Table]
@@ -2879,10 +3042,11 @@ end
 function addVectors(vector1, vector2)
     local newVector = {}
     for i = 1, #vector1 do
-        newVector[i] = vector1[i] +  vector2[i]
+        newVector[i] = vector1[i] + vector2[i]
     end
     return newVector
 end
+
 -- Draws the tail of the chinchilla
 -- Parameters
 --    o                : [imgui overlay drawlist]
