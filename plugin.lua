@@ -523,9 +523,11 @@ end
 function stutterifyLNMenu()
     local settingVars = {
         noteSkipCount = 0,
+        extendAllSelected = true
     }
     getVariables("applyStutterifySettingVars", settingVars)
     chooseNoteSkipCount(settingVars)
+    chooseExtendAllSelected(settingVars)
     saveVariables("applyStutterifySettingVars", settingVars)
     addSeparator()
     local buttonText = "Stutterify selected notes"
@@ -835,19 +837,25 @@ end
 -- Parameters
 --    settingVars : list of variables used for the current menu [Table]
 function applyStutterify(settingVars)
+    noteData = {}
     noteTimes = {}
      for _, note in ipairs(state.SelectedHitObjects) do
-        table.insert(noteTimes, note.startTime)
+        if (noteData["time" .. note.startTime] ~= nil) then
+            table.insert(noteData["time" .. note.startTime], note.lane)
+        else 
+            noteData["time" .. note.startTime] = {note.lane}
+            table.insert(noteTimes, note.startTime)
+        end
      end
-
-     if (settingVars.noteSkipCount >= #noteTimes - 1) then return end
 
     notesToRemove = {}
     notesToAdd = {}
+
     for i=1,#noteTimes - settingVars.noteSkipCount - 1 do
-        currentNote = state.SelectedHitObjects[i]
-        addNoteToList(notesToAdd, state.SelectedHitObjects[i], noteTimes[i], currentNote.lane, noteTimes[i + settingVars.noteSkipCount + 1])
-        table.insert(notesToRemove, currentNote)
+        for _, lane in pairs(noteData["time" .. noteTimes[i]]) do
+            addNoteToList(notesToAdd, state.SelectedHitObjects[i], noteTimes[i], lane, noteTimes[i + settingVars.noteSkipCount + 1])
+            table.insert(notesToRemove, currentNote) 
+        end
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
@@ -1665,6 +1673,15 @@ function chooseNoteSkipCount(settingVars)
     helpMarker("Note skip count specifies how many note times a base note should skip to reach its LN destination.\n" ..
         "If note skip count is 0, the LNs will be extended to the next note in time.")
 end
+
+-- Lets you choose if all selected notes are extended
+-- Parameters
+--    settingVars : list of variables used for the current menu [Table]
+function chooseExtendAllSelected(settingVars)
+    local _, extendAllSelected = imgui.Checkbox("Extend All Selected?", settingVars.extendAllSelected)
+    helpMarker("If selected, will extend all selected notes. If not, it will extend notes such that the extension never exists the selected temporal region.")
+end
+
 
 -- Lets you choose the behavior of something (speed up or slow down)
 -- Parameters
