@@ -1425,8 +1425,8 @@ function simpleActionMenu(buttonText, minimumNotes, actionfunc, globalVars, sett
         return
     end
 
-    button(buttonText, ACTION_BUTTON_SIZE, keys.T, false, actionfunc, globalVars, settingVars)
-    tooltip("Press ' T ' on your keyboard to do the same thing as this button")
+    button(buttonText, ACTION_BUTTON_SIZE, keys.R, false, actionfunc, globalVars, settingVars)
+    tooltip("Press ' R ' on your keyboard to do the same thing as this button")
 end
 
 -- Returns whether or not a tooltip is already active [Boolean]
