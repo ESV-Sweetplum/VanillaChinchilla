@@ -103,6 +103,7 @@ EDIT_GENERAL_MENUS = { -- sub-menus within the "Edit Notes (General)" menu
 EDIT_LNS_MENUS = { -- sub-menus within the "Edit Notes (LNs)" menu
     "Apply Full LN",
     "Apply Inverse LN",
+    "Stutterify",
     "Adjust LN Lengths",
     "Change LNs to Rice"
 }
@@ -477,6 +478,7 @@ function editNotesLNsMenu()
     local currentMenu = EDIT_LNS_MENUS[menuVars.subMenuIndex]
     if currentMenu == "Apply Full LN" then applyFullLNMenu() end
     if currentMenu == "Apply Inverse LN" then applyInverseLNMenu() end
+    if currentMenu == "Stutterify" then stutterifyLNMenu() end
     if currentMenu == "Adjust LN Lengths" then adjustLNLengthsMenu() end
     if currentMenu == "Change LNs to Rice" then changeLNsToRiceMenu() end
 end
@@ -516,6 +518,21 @@ function applyInverseLNMenu()
     local minimumNotes = 2
     simpleActionMenu(buttonText, minimumNotes, applyInverseLN, nil, settingVars)
 end
+
+-- Creates the "Stutterify" menu
+function stutterifyLNMenu()
+    local settingVars = {
+        noteSkipCount = 0,
+    }
+    getVariables("applyStutterifySettingVars", settingVars)
+    chooseNoteSkipCount(settingVars)
+    saveVariables("applyStutterifySettingVars", settingVars)
+    addSeparator()
+    local buttonText = "Stutterify selected notes"
+    local minimumNotes = 2
+    simpleActionMenu(buttonText, minimumNotes, applyStutterify, nil, settingVars)
+end
+
 
 -- Creates the "Adjust LN Lengths" menu
 function adjustLNLengthsMenu()
@@ -810,6 +827,27 @@ function applyInverseLN(settingVars)
     for lane = 1, totalNumLanes do
         local notesInCurrentLane = notesInLanes[lane]
         convertLaneToInverseLN(settingVars, notesToAdd, notesInCurrentLane)
+    end
+    removeAndAddNotes(notesToRemove, notesToAdd)
+end
+
+-- Applies the stutterify mod onto selected notes
+-- Parameters
+--    settingVars : list of variables used for the current menu [Table]
+function applyStutterify(settingVars)
+    noteTimes = {}
+     for _, note in ipairs(state.SelectedHitObjects) do
+        table.insert(noteTimes, note.startTime)
+     end
+
+     if (settingVars.noteSkipCount >= #noteTimes - 1) then return end
+
+    notesToRemove = {}
+    notesToAdd = {}
+    for i=1,#noteTimes - settingVars.noteSkipCount - 1 do
+        currentNote = state.SelectedHitObjects[i]
+        addNoteToList(notesToAdd, state.SelectedHitObjects[i], noteTimes[i], currentNote.lane, noteTimes[i + settingVars.noteSkipCount + 1])
+        table.insert(notesToRemove, currentNote)
     end
     removeAndAddNotes(notesToRemove, notesToAdd)
 end
@@ -1425,7 +1463,7 @@ function simpleActionMenu(buttonText, minimumNotes, actionfunc, globalVars, sett
         return
     end
 
-    button(buttonText, ACTION_BUTTON_SIZE, keys.T, false, actionfunc, globalVars, settingVars)
+    button(buttonText, ACTION_BUTTON_SIZE, keys.R, false, actionfunc, globalVars, settingVars)
     tooltip("Press ' T ' on your keyboard to do the same thing as this button")
 end
 
@@ -1616,6 +1654,16 @@ function chooseBeatSnapGap(settingVars)
     settingVars.beatSnapGap = clampToInterval(newBeatSnapGap, 0, FUNNY_NUMBER)
     helpMarker("Beat snap gap between LNs when applying inverse.\n" ..
         "If beat snap gap is 0, the minimum LN gap will be used instead.")
+end
+
+-- Lets you choose the note skip count
+-- Parameters
+--    settingVars : list of variables used for the current menu [Table]
+function chooseNoteSkipCount(settingVars)
+    local _, newNoteSkipCount = imgui.inputInt("Note Skip Count", settingVars.noteSkipCount, 1, 1, "%.2f")
+    settingVars.noteSkipCount = clampToInterval(newNoteSkipCount, 0, FUNNY_NUMBER)
+    helpMarker("Note skip count specifies how many note times a base note should skip to reach its LN destination.\n" ..
+        "If note skip count is 0, the LNs will be extended to the next note in time.")
 end
 
 -- Lets you choose the behavior of something (speed up or slow down)
