@@ -1,5 +1,5 @@
 # VanillaChinchilla
-[![VanillaChinchilla logo](https://github.com/kloi34/VanillaChinchilla/assets/53842237/4e06234d-9011-4e52-8ba1-7bc466d461f8)](#)
+[![VanillaChinchilla logo](assets/logo.png)](#)
 > "The ultimate community-driven and open-source competitive mapping plugin"
 
 This is a plugin for [Quaver](https://github.com/Quaver), the ultimate community-driven and open-source competitive rhythm game.
@@ -14,6 +14,7 @@ Here's all the features of the plugin so far:
 - Shift Notes Up/Down
 - Shift Notes Left/Right
 - Switch Note Lanes
+- Switch Note Types
 - Flip Notes Vertically
 - Scale Note Spacing
 - Shear Lane Positions
